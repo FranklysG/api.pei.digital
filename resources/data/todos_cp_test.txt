@@ -1,0 +1,29 @@
+01;01;249;Alcafaz;;;;;;;;;;;3750;011;AGAD�O
+01;01;250;Caselho;;;;;;;;;;;3750;012;AGAD�O
+01;01;251;Corga da Serra;;;;;;;;;;;3750;013;AGAD�O
+01;01;252;Foz;;;;;;;;;;;3750;014;AGAD�O
+03;09;38819;P�voa de Lanhoso;930903;Rua;de;;;Angola;Mo�nhos Novos;;;;4830;586;P�VOA DE LANHOSO
+03;09;38819;P�voa de Lanhoso;940903;Rua;da;;;Guin�;Mo�nhos Novos;;;;4830;587;P�VOA DE LANHOSO
+03;09;38819;P�voa de Lanhoso;950903;Rua;de;;;Macau;Mo�nhos Novos;;;;4830;588;P�VOA DE LANHOSO
+03;09;38819;P�voa de Lanhoso;960903;Rua;de;;;Goa;Mo�nhos Novos;;;;4830;589;P�VOA DE LANHOSO
+08;13;44752;P�ra;40251308;Rua;;Dona;;Maria Teresa de Roma;;;;;8365;204;P�RA
+08;13;44752;P�ra;46000100;Rua;do;;;Levante;;;;;8365;204;P�RA
+08;13;44752;P�ra;46782100;Rua;do;;;Moinho;Urbaniza��o das Arroteias;;;;8365;213;P�RA
+08;13;44752;P�ra;46783100;Rua;das;;;Figueiras;Urbaniza��o das Arroteias;;;;8365;213;P�RA
+08;13;44752;P�ra;46785100;Beco;das;;;Arroteias;Urbaniza��o das Arroteias;;;;8365;213;P�RA
+08;13;44752;P�ra;46787100;Rua;do;;;Vento;Urbaniza��o das Arroteias;;;;8365;213;P�RA
+09;03;12789;Casas de Soeiro;29599100;Rotunda;;Doutor;;Oleg�rio Louren�o da Silva;;;;;6360;352;CASAS DO SOEIRO
+09;03;12789;Casas de Soeiro;320309;Avenida;;Doutor;;Marques Fernandes;;;;;6360;352;CASAS DO SOEIRO
+09;03;12789;Casas de Soeiro;42798100;Azinhaga;da;;;Quint�;;;;;6360;352;CASAS DO SOEIRO
+09;03;12789;Casas de Soeiro;42799100;Cantinho;da;;;Quint�;;;;;6360;352;CASAS DO SOEIRO
+09;03;12789;Casas de Soeiro;44563100;Rua;da;;;Escola;;;;;6360;220;CASAS DO SOEIRO
+46;02;23751;S�o Caetano;776740000;Travessa;de;S�o;;Caetano;;;;;9950;425;S�O CAETANO MAD
+46;02;23751;S�o Caetano;776750000;Travessa;das;;;Almas;;;;;9950;425;S�O CAETANO MAD
+46;02;23751;S�o Caetano;776760000;Travessa;dos;;;Fontes;;;;;9950;424;S�O CAETANO MAD
+46;02;23751;S�o Caetano;776810000;Travessa;da;;;Moagem;;;;;9950;422;S�O CAETANO MAD
+46;02;23752;Terra do P�o;;;;;;;;;;;9950;451;S�O CAETANO MAD
+46;02;23754;Gingeira;;;;;;;;;;;9950;502;S�O MATEUS MAD
+49;01;14703;Corvo;1553350000;Caminho;da;;;V�rzea;;;;;9980;034;CORVO
+49;01;14704;Maranh�o;;;;;;;;;;;9980;050;CORVO
+49;01;14705;Outeiro;;;;;;;;;;;9980;060;CORVO
+49;01;14706;Travessinha;;;;;;;;;;;9980;070;CORVO

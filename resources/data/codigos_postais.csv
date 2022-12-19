@@ -1,0 +1,101 @@
+cod_distrito,cod_concelho,cod_localidade,nome_localidade,cod_arteria,tipo_arteria,prep1,titulo_arteria,prep2,nome_arteria,local_arteria,troco,porta,cliente,num_cod_postal,ext_cod_postal,desig_postal
+01,01,249,Alcafaz,,,,,,,,,,,3750,011,AGADÃO
+01,01,250,Caselho,,,,,,,,,,,3750,012,AGADÃO
+01,01,251,Corga da Serra,,,,,,,,,,,3750,013,AGADÃO
+01,01,252,Foz,,,,,,,,,,,3750,014,AGADÃO
+01,01,253,Guistola,,,,,,,,,,,3750,015,AGADÃO
+01,01,254,Guistolinha,,,,,,,,,,,3750,016,AGADÃO
+01,01,255,Lomba,,,,,,,,,,,3750,017,AGADÃO
+01,01,256,Povinha,,,,,,,,,,,3750,018,AGADÃO
+01,01,257,Vila Mendo,,,,,,,,,,,3750,019,AGADÃO
+01,01,258,Aguada de Baixo,,,,,,,,,,PC AGUADA DE BAIXO,3750,996,AGUADA DE BAIXO
+01,01,258,Aguada de Baixo,,,,,,,,,,,3750,031,AGUADA DE BAIXO
+01,01,260,Landiosa,,,,,,,,,,,3750,033,AGUADA DE BAIXO
+01,01,262,Passadouro,,,,,,,,,,,3750,035,AGUADA DE BAIXO
+01,01,263,Aguada de Cima,,,,,,,,,,PC AGUADA DE CIMA,3750,998,AGUADA DE CIMA
+01,01,263,Aguada de Cima,,,,,,,,,,,3750,041,AGUADA DE CIMA
+01,01,264,Aguadalte,,,,,,,,,,,3750,042,AGUADA DE CIMA
+01,01,265,Almas da Areosa,,,,,,,,,,,3750,043,AGUADA DE CIMA
+01,01,266,Bustelo,,,,,,,,,,,3750,044,AGUADA DE CIMA
+01,01,267,Cabeço Grande,,,,,,,,,,,3750,045,AGUADA DE CIMA
+01,01,268,Cadaval,,,,,,,,,,,3750,046,AGUADA DE CIMA
+01,01,269,Canavai,,,,,,,,,,,3750,047,AGUADA DE CIMA
+01,01,270,Carvalhitos,,,,,,,,,,,3750,048,AGUADA DE CIMA
+01,01,271,Engenho,,,,,,,,,,,3750,049,AGUADA DE CIMA
+01,01,272,Forcada,,,,,,,,,,,3750,050,AGUADA DE CIMA
+01,01,273,Formigueiro,,,,,,,,,,,3750,051,AGUADA DE CIMA
+01,01,274,Forno,,,,,,,,,,,3750,052,AGUADA DE CIMA
+01,01,275,Garrido ,,,,,,,,,,,3750,053,AGUADA DE CIMA
+01,01,276,Insuas,,,,,,,,,,,3750,054,AGUADA DE CIMA
+01,01,277,Miragaia,,,,,,,,,,,3750,055,AGUADA DE CIMA
+01,01,278,Pisão,,,,,,,,,,,3750,056,AGUADA DE CIMA
+01,01,279,Pousadouros,,,,,,,,,,,3750,057,AGUADA DE CIMA
+01,01,280,Póvoa de Baixo,,,,,,,,,,,3750,058,AGUADA DE CIMA
+01,01,281,Póvoa do Teso,,,,,,,,,,,3750,059,AGUADA DE CIMA
+01,01,282,Póvoa São Domingos,,,,,,,,,,,3750,060,AGUADA DE CIMA
+01,01,283,Póvoa do Vale do Trigo,15315100,Beco,das,,,Flores,,,,,3750,364,BELAZAIMA DO CHÃO
+01,01,283,Póvoa do Vale do Trigo,15317100,Rua,da,,,Aveleira,,,,,3750,364,BELAZAIMA DO CHÃO
+01,01,283,Póvoa do Vale do Trigo,15320100,Travessa,,Nossa Senhora,das,Preces,,,,,3750,364,BELAZAIMA DO CHÃO
+01,01,283,Póvoa do Vale do Trigo,18348100,Rua,,,,Principal,,,,,3750,364,BELAZAIMA DO CHÃO
+01,01,283,Póvoa do Vale do Trigo,19376100,Rua,,Nossa Senhora,das,Preces,,Impares de 59 a 141,,,3750,061,AGUADA DE CIMA
+01,01,283,Póvoa do Vale do Trigo,19376100,Rua,,Nossa Senhora,das,Preces,,Pares de 126 a 192,,,3750,364,BELAZAIMA DO CHÃO
+01,01,283,Póvoa do Vale do Trigo,19376100,Rua,,Nossa Senhora,das,Preces,,Pares de 14 a 56,,,3750,061,AGUADA DE CIMA
+01,01,283,Póvoa do Vale do Trigo,19377100,Canto,,Nossa Senhora,das,Preces,,,,,3750,364,BELAZAIMA DO CHÃO
+01,01,283,Póvoa do Vale do Trigo,23789100,Rua,das,,,Hortas,,,,,3750,061,AGUADA DE CIMA
+01,01,283,Póvoa do Vale do Trigo,23790100,Rua,,,,Mina da Póvoa,,,,,3750,061,AGUADA DE CIMA
+01,01,283,Póvoa do Vale do Trigo,298740000,Rua,do,,,Viso,,,,,3750,061,AGUADA DE CIMA
+01,01,283,Póvoa do Vale do Trigo,298780000,Travessa,das,,,Flores,,,,,3750,061,AGUADA DE CIMA
+01,01,283,Póvoa do Vale do Trigo,298790000,Rua,das,,,Flores,,Impares de 45 a 461,,,3750,061,AGUADA DE CIMA
+01,01,283,Póvoa do Vale do Trigo,298790000,Rua,das,,,Flores,,Pares de 64 a 116,,,3750,364,BELAZAIMA DO CHÃO
+01,01,283,Póvoa do Vale do Trigo,298800000,Rua,da,,,Escola,,,,,3750,061,AGUADA DE CIMA
+01,01,283,Póvoa do Vale do Trigo,298810000,Travessa,dos,,,Ribeiros,,,,,3750,061,AGUADA DE CIMA
+01,01,283,Póvoa do Vale do Trigo,298830000,Travessa,do,,,Baeta,,Impares de 11 a 43,,,3750,061,AGUADA DE CIMA
+01,01,283,Póvoa do Vale do Trigo,298830000,Travessa,do,,,Baeta,,Pares de 18 a 34,,,3750,364,BELAZAIMA DO CHÃO
+01,01,283,Póvoa do Vale do Trigo,298850000,Rua,dos,,,Almeidas,,Impares de 253 a 455,,,3750,061,AGUADA DE CIMA
+01,01,283,Póvoa do Vale do Trigo,298850000,Rua,dos,,,Almeidas,,Pares de 184 a 462,,,3750,364,BELAZAIMA DO CHÃO
+01,01,283,Póvoa do Vale do Trigo,298860000,Rua,,,,Principal,,,,,3750,061,AGUADA DE CIMA
+01,01,283,Póvoa do Vale do Trigo,298870000,Rua,das,,,Cavadas,,,,,3750,061,AGUADA DE CIMA
+01,01,283,Póvoa do Vale do Trigo,7864100,Rua,da,,,Fonte da Póvoa,,,,,3750,061,AGUADA DE CIMA
+01,01,283,Póvoa do Vale do Trigo,7871100,Travessa,da,,,Fonte da Póvoa,,,,,3750,061,AGUADA DE CIMA
+01,01,284,São Martinho,,,,,,,,,,,3750,062,AGUADA DE CIMA
+01,01,285,Seixo,,,,,,,,,,,3750,063,AGUADA DE CIMA
+01,01,286,Vale do Grou,,,,,,,,,,,3750,064,AGUADA DE CIMA
+01,01,287,Vale do Lobo,,,,,,,,,,,3750,065,AGUADA DE CIMA
+01,01,288,Vale Grande,,,,,,,,,,,3750,066,AGUADA DE CIMA
+01,01,289,Águeda,100101,Largo,,Doutor,,Homem de Mello,,,,,3750,107,ÁGUEDA
+01,01,289,Águeda,10530101,Rua,,,,António Feliciano Castilho,Ninho D'Águia,,,,3750,313,ÁGUEDA
+01,01,289,Águeda,10570101,Praceta,,São,,Pedro,São Pedro,,,,3750,317,ÁGUEDA
+01,01,289,Águeda,108441100,Rua,,,,11,,,,,3750,130,ÁGUEDA
+01,01,289,Águeda,109149100,Largo,da,,,Estação,,,,,3750,116,ÁGUEDA
+01,01,289,Águeda,109343100,Calçada,da,,,Quinta dos Oliveiras,,,,,3750,328,ÁGUEDA
+01,01,289,Águeda,109820100,Largo,da,,,Venda Nova,,,,,3750,332,ÁGUEDA
+01,01,289,Águeda,110101,Rua,,,,António da Silva Brinco,,,,,3750,122,ÁGUEDA
+01,01,289,Águeda,130101,Rua,,,,António Ferreira Sucena,,,,,3750,121,ÁGUEDA
+01,01,289,Águeda,13129100,Avenida,do,,,Emigrante,Alagoa,Impares de 2581 a 2755,,,3750,301,ÁGUEDA
+01,01,289,Águeda,13129100,Avenida,do,,,Emigrante,Alagoa,Pares de 1896 a 2732,,,3750,171,ÁGUEDA
+01,01,289,Águeda,13129100,Avenida,do,,,Emigrante,Ameal,,,,3750,303,ÁGUEDA
+01,01,289,Águeda,13129100,Avenida,do,,,Emigrante,Ninho D'Águia,,,,3750,313,ÁGUEDA
+01,01,289,Águeda,140101,Rua,,,,Armindo Santos,,,,,3750,125,ÁGUEDA
+01,01,289,Águeda,1477340000,Rua,,Doutor,,António Gomes da Costa,,,,,3750,329,ÁGUEDA
+01,01,289,Águeda,150101,Avenida,,Arcebispo,,Primaz,,,,,3750,123,ÁGUEDA
+01,01,289,Águeda,1507960000,Rua,,,,9,,,,,3750,163,ÁGUEDA
+01,01,289,Águeda,1507970000,Rua,,Doutor,,António Arede Fernandes,,,,,3750,330,ÁGUEDA
+01,01,289,Águeda,1507980000,Rua,,,,Armando Santos,Barreiras,,,,3750,117,ÁGUEDA
+01,01,289,Águeda,1565570000,Rua,de,São,,Pedro,São Pedro,,,,3750,317,ÁGUEDA
+01,01,289,Águeda,160101,Rua,dos,,,Bombeiros Voluntários,,,,,3750,138,ÁGUEDA
+01,01,289,Águeda,16408100,Rua,do,,,Vouguinha,Alagoa,,,,3750,301,ÁGUEDA
+01,01,289,Águeda,16411100,Rua,da,,,Somira,Alagoa,,,,3750,301,ÁGUEDA
+01,01,289,Águeda,16414100,Rua,,,,Luciana Aguiar Guerra,Alagoa,,,,3750,301,ÁGUEDA
+01,01,289,Águeda,16415100,Rua,,Mestre,,João Breda,Alagoa,,,,3750,301,ÁGUEDA
+01,01,289,Águeda,17875100,Praceta,,Professor,,Américo Urbano,,,,,3750,137,ÁGUEDA
+01,01,289,Águeda,17916100,Praça,,Conselheiro,,Albano de Mello,,,,,3750,110,ÁGUEDA
+01,01,289,Águeda,17930100,Rua,da,,,Corga,Corga,,,,3750,715,RECARDÃES
+01,01,289,Águeda,180101,Rua,,Capitão,,José Maria Coutinho,,,,,3750,135,ÁGUEDA
+01,01,289,Águeda,18890100,Rua,,,,7,Alagoa,,,,3750,301,ÁGUEDA
+01,01,289,Águeda,190101,Avenida,,,,Calouste Gulbenkian,,,,,3750,102,ÁGUEDA
+01,01,289,Águeda,200101,Praceta,,Capitão,,Castelo Silva,São Pedro,,,,3750,112,ÁGUEDA
+01,01,289,Águeda,2058610000,Travessa,,Engenheiro,,José Bastos Xavier,,,,,3750,144,ÁGUEDA
+01,01,289,Águeda,2058620000,Rua,de,,,Macau,Alagoa,,,,3750,301,ÁGUEDA
+01,01,289,Águeda,20932100,Praceta,,Capitão,,Brites Vasques,Alagoa,,,,3750,301,ÁGUEDA
+01,01,289,Águeda,20938100,Rua,,,,Eva Vidal Coelho Rodrigues,Alagoa,,,,3750,301,ÁGUEDA
+01,01,289,Águeda,210101,Rua,,,,Celestino Neto,,,,,3750,126,ÁGUEDA

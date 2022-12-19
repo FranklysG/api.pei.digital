@@ -1,0 +1,20 @@
+district_id;code;type;name;cities
+23;4301;Municipality;Angra do Heroísmo;16
+23;4501;Municipality;Calheta de São Jorge;84
+23;4901;Municipality;Corvo;5
+23;4701;Municipality;Horta;49
+23;4201;Municipality;Lagoa;6
+23;4801;Municipality;Lajes Das Flores;42
+23;4601;Municipality;Lajes do Pico;60
+23;4602;Municipality;Madalena;44
+23;4202;Municipality;Nordeste;15
+23;4203;Municipality;Ponta Delgada;51
+23;4204;Municipality;Povoação;22
+23;4302;Municipality;Praia da Vitória;41
+23;4205;Municipality;Ribeira Grande;36
+23;4401;Municipality;Santa Cruz da Graciosa;57
+23;4802;Municipality;Santa Cruz Das Flores;23
+23;4603;Municipality;São Roque do Pico;63
+23;4502;Municipality;Velas;45
+23;4101;Municipality;Vila do Porto;114
+23;4206;Municipality;Vila Franca do Campo;11
