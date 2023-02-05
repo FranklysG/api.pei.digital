@@ -16,8 +16,6 @@ return new class extends Migration
         Schema::create('workspaces', function (Blueprint $table) {
             $table->id();
             $table->string('uuid')->unique();
-            $table->integer('requests')->nullable();
-            $table->integer('integrations')->nullable();
             $table->timestamps();
         });
     }

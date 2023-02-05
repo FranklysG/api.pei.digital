@@ -14,34 +14,41 @@
 
 namespace App\Repositories;
 
-use App\Models\Billing;
+use App\Models\Form;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Crypt;
+use Illuminate\Support\Facades\Hash;
 
-class BillingRepository extends BaseRepository{
+class FormRepository extends BaseRepository{
 
     public function __construct(){
-        parent::__construct(Billing::class);
+        parent::__construct(Form::class);
     }
 
     public function create($data){
-        return $this->model->create($data);
+        $hash = [ 'token' => Crypt::encryptString(time())];
+        $data = array_merge($data, $hash);
+        
+        $model = $this->model->create($data);
+        return $model->fresh();
     }
 
     public function update($uuid, $data)
     {
         try {
-            $billing = $this->getByUuid($uuid);
+            $form = $this->getByUuid($uuid);
         } catch (ModelNotFoundException $exception) {
             return false;
         }
 
-        $billing->update($data);
-        return $billing->fresh();
+        $form->update($data);
+        return $form->fresh();
     }
 
     public function delete($uuid)
     {
-        $billing = $this->getByUuid($uuid);
-        return $billing->delete();
+        $form = $this->getByUuid($uuid);
+        return $form->delete();
     }
 }

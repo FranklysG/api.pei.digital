@@ -6,8 +6,6 @@ use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration
 {
-
-    protected $connection = 'mysql-logs';
     /**
      * Run the migrations.
      *
@@ -15,12 +13,9 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::dropIfExists('user_login_logs');
-        Schema::create('user_login_logs', function (Blueprint $table) {
+        Schema::create('forms', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
-            $table->string('email');
-            $table->string('action');
+            $table->string('uuid')->unique();
             $table->timestamps();
         });
     }
@@ -32,6 +27,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('user_login_logs');
+        Schema::dropIfExists('user_workspaces');
     }
 };

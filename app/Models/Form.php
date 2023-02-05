@@ -6,7 +6,7 @@ use App\Traits\Uuids;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Request extends Model
+class Form extends Model
 {
     use HasFactory, Uuids;
 
@@ -17,10 +17,10 @@ class Request extends Model
      */
     protected $fillable = [
         'uuid',
-        'description',
-        'action',
-        'code',
-        'status',
+        'name',
+        'url',
+        'token',
+        'active'
     ];
 
     /**
@@ -29,10 +29,10 @@ class Request extends Model
      * @var array<int, string>
      */
     protected $hidden = [
-        'integration_id'
+        'id',
     ];
 
-    public function integrations(){
-        return $this->hasOne(Integration::class);
+    public function requests(){
+        return $this->belongsTo(Request::class);
     }
 }

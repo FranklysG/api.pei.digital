@@ -18,14 +18,8 @@ class WorkspaceSeeder extends Seeder
      */
     public function run()
     {        
-        Workspace::create([
-            'requests' => rand(0, 5000),
-            'integrations' => rand(1, 5),
-        ]);
+        Workspace::create([]);
 
-        Workspace::create([
-            'requests' => rand(0, 5000),
-            'integrations' => rand(1, 5),
-        ]);
+        Workspace::create([]);
     }
 }

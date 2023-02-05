@@ -18,12 +18,5 @@ class DatabaseSeeder extends Seeder
         $this->call(WorkspaceSeeder::class);
         $this->call(UserWorkspaceSeeder::class);
         $this->call(SettingSeeder::class);
-
-        // $this->call(CountrySeeder::class);
-        // $this->call(StateSeeder::class);
-        // $this->call(CitySeeder::class);
-        // $this->call(DistrictSeeder::class);
-        // $this->call(StreetSeeder::class);
-        // $this->call(ZipCodeSeeder::class);
     }
 }

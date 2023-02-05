@@ -12,7 +12,7 @@
 ##### Create .env : 
 
 ```yml
-cp .env-example .env
+cp .env.example .env
 ```
 
 Open this project in other terminal and run 

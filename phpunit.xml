@@ -22,9 +22,9 @@
         <env name="BCRYPT_ROUNDS" value="4"/>
         <env name="CACHE_DRIVER" value="array"/>
         <env name="DB_CONNECTON" value="mysql"/>
-        <env name="DB_DATABASE" value="postalcode"/>
+        <env name="DB_DATABASE" value="peidigital"/>
         <env name="DB_CONNECTON" value="mysql-logs"/>
-        <env name="DB_DATABASE_LOG" value="postalcode_log"/>
+        <env name="DB_DATABASE_LOG" value="peidigital_log"/>
         <env name="MAIL_MAILER" value="array"/>
         <env name="QUEUE_CONNECTION" value="sync"/>
         <env name="SESSION_DRIVER" value="array"/>

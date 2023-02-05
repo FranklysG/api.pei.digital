@@ -4,7 +4,6 @@ namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use App\Models\User;
-use App\Models\UserLoginLog;
 use App\Models\Workspace;
 use Illuminate\Auth\Events\Registered;
 use Illuminate\Http\Request;
@@ -42,12 +41,6 @@ class RegisteredUserController extends Controller
         event(new Registered($user));
         
         Auth::login($user);
-        
-        UserLoginLog::create([
-            'name' => $request->name,
-            'email' => $request->email,
-            'action' => 'register'
-        ]);
 
         return response()->noContent();
     }

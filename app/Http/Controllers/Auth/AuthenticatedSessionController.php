@@ -22,13 +22,6 @@ class AuthenticatedSessionController extends Controller
 
         $request->session()->regenerate();
 
-        // TODO: implements login logs colum name is cannot be null
-        UserLoginLog::create([
-            'name' => $request->name ?? '',
-            'email' => $request->email,
-            'action' => 'login'
-        ]);
-
         return response()->noContent();
     }
 
