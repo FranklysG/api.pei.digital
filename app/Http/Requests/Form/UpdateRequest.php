@@ -23,13 +23,6 @@ class UpdateRequest extends FormRequest
      */
     public function rules()
     {
-        return [
-            'uuid' => 'string|required',
-            'first_name' => 'string',
-            'last_name' => 'string',
-            'contact_movel' => 'boolean',
-            'contact_email' => 'boolean'
-
-        ];
+        return [];
     }
 }

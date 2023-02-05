@@ -1,11 +1,8 @@
 <?php
 
-use App\Http\Controllers\Integration\IntegrationController;
-use App\Http\Controllers\Plan\PlanController;
-use App\Http\Controllers\Billing\BillingController;
+use App\Http\Controllers\Form\FormController;
 use App\Http\Controllers\Setting\SettingController;
 use App\Http\Controllers\Workspace\WorkspaceController;
-use App\Http\Controllers\ZipCode\ZipCodeController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -32,4 +29,9 @@ Route::middleware(['auth:sanctum'])->group(function () {
     Route::get('/settings', [SettingController::class, 'show'])->name('api.setting.show');
     Route::put('/settings', [SettingController::class, 'update'])->name('api.setting.update');
     Route::post('/settings', [SettingController::class, 'store'])->name('api.setting.store');
+    
+    Route::get('/forms', [FormController::class, 'show'])->name('api.form.show');
+    Route::put('/forms', [FormController::class, 'update'])->name('api.form.update');
+    Route::post('/forms', [FormController::class, 'store'])->name('api.form.store');
+    Route::delete('/forms', [FormController::class, 'destroy'])->name('api.form.destroy');
 });

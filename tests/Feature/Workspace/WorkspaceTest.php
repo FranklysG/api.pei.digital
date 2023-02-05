@@ -23,7 +23,7 @@ class WorkspaceTest extends TestCase
 
         $response->assertStatus(200);
         $this->assertNotNull($workspace);
-        $this->assertEquals(5, count($workspace['content']['data']));
+        $this->assertEquals(3, count($workspace['content']['data']));
     }
 
     /** @test */

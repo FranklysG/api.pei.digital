@@ -23,11 +23,6 @@ class StoreRequest extends FormRequest
      */
     public function rules()
     {
-        return [
-            'first_name' => 'string|required',
-            'last_name' => 'string|required',
-            'contact_movel' => 'boolean',
-            'contact_email' => 'boolean'
-        ];
+        return [];
     }
 }

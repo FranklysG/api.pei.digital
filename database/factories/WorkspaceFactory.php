@@ -22,9 +22,6 @@ class WorkspaceFactory extends Factory
      */
     public function definition()
     {
-        return [
-            'requests' => rand(0, 5000),
-            'integrations' => rand(0,10),
-        ];
+        return [];
     }
 }

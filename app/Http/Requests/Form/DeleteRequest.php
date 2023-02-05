@@ -23,8 +23,6 @@ class DeleteRequest extends FormRequest
      */
     public function rules()
     {
-        return [
-            'uuid' => 'string|required',
-        ];
+        return [];
     }
 }

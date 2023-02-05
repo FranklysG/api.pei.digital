@@ -17,10 +17,6 @@ class Form extends Model
      */
     protected $fillable = [
         'uuid',
-        'name',
-        'url',
-        'token',
-        'active'
     ];
 
     /**
@@ -31,8 +27,4 @@ class Form extends Model
     protected $hidden = [
         'id',
     ];
-
-    public function requests(){
-        return $this->belongsTo(Request::class);
-    }
 }
