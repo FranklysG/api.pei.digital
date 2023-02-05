@@ -15,7 +15,9 @@ return new class extends Migration
     {
         Schema::create('forms', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('workspace_id')->constrained();
             $table->string('uuid')->unique();
+            $table->string('name');
             $table->timestamps();
         });
     }

@@ -51,4 +51,10 @@ class FormRepository extends BaseRepository{
         $form = $this->getByUuid($uuid);
         return $form->delete();
     }
+
+    public function getFormByWorkspaceId() {
+        $userWorkspace = $this->getWorkspaceByUserId();
+        $forms = Form::where('workspace_id', $userWorkspace->workspace_id)->get();
+        return $forms;
+    }
 }

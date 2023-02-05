@@ -23,6 +23,9 @@ class StoreRequest extends FormRequest
      */
     public function rules()
     {
-        return [];
+        return [
+            'name' => 'string|required',
+            'workspace_id' => 'numeric|required'
+        ];
     }
 }

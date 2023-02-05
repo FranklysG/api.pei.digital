@@ -14,6 +14,9 @@
 
 namespace App\Repositories;
 
+use App\Models\UserWorkspace;
+use Illuminate\Support\Facades\Auth;
+
 class BaseRepository
 {
     protected $model;
@@ -44,6 +47,12 @@ class BaseRepository
         $record = $this->getByUuid($uuid);
         $record->update($data);
         return $record;
+    }
+
+    public function getWorkspaceByUserId() {
+        $user = Auth::user();
+        $workspace = UserWorkspace::where('user_id', $user->id)->first();
+        return $workspace;
     }
 
     public function getByUuid($uuid, $relationships = [])

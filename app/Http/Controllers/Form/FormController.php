@@ -3,9 +3,10 @@
 namespace App\Http\Controllers\Form;
 
 use App\Http\Controllers\Controller;
+use App\Repositories\FormRepository;
+use App\Http\Requests\Form\DeleteRequest;
 use App\Http\Requests\Form\StoreRequest;
 use App\Http\Requests\Form\UpdateRequest;
-use App\Repositories\FormRepository;
 
 class FormController extends Controller
 {
@@ -57,10 +58,30 @@ class FormController extends Controller
      */
     public function show(FormRepository $repository)
     {
-        $forms = $repository->getAll();
+        $forms = $repository->getFormByWorkspaceId();
         
         if($forms){
             return $this->apiResponse->successResponse('List of Forms', $forms->toArray());
+        }else {
+            return $this->apiResponse->errorResponse('Wrong error', []);
+        }
+    }
+
+    /**
+     * Destroy a newly created resource in storage.
+     *
+     * @param  \App\Http\Requests\Form\DeleteRequest  $request
+     * @param  \App\Repositories\FormRepository  $repository
+     * @return \Illuminate\Http\Response
+     */
+    public function destroy(DeleteRequest $request, FormRepository $repository)
+    {
+        $data = $request->validated();
+        $uuid = $data['uuid'];
+        
+        $forms = $repository->delete($uuid);
+        if($forms){
+            return $this->apiResponse->successResponse('Forms delete with success', []);
         }else {
             return $this->apiResponse->errorResponse('Wrong error', []);
         }

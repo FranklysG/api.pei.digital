@@ -15,10 +15,7 @@ class Workspace extends Model
      *
      * @var array<int, string>
      */
-    protected $fillable = [
-        'requests',
-        'integrations',
-    ];
+    protected $fillable = [];
 
     /**
      * The attributes that should be hidden for serialization.
@@ -27,26 +24,10 @@ class Workspace extends Model
      */
     protected $hidden = [
         'id',
-        'plan_id',
-        'integration_id',
-        'billing_detail_id',
-        'setting_id'
     ];
 
-    public function plan() {
-        return $this->hasOne(Plan::class);
-    }
-
-    public function billingDetail() {
-        return $this->hasOne(BillingDetail::class);
-    }
-
-    public function integration() {
-        return $this->hasOne(Integration::class);
-    }
-
-    public function setting() {
-        return $this->hasOne(Setting::class);
+    public function forms() {
+        return $this->hasMany(Form::class);
     }
 
     public function users(){

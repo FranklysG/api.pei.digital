@@ -16,7 +16,9 @@ class Form extends Model
      * @var array<int, string>
      */
     protected $fillable = [
+        'workspace_id',
         'uuid',
+        'name'
     ];
 
     /**
@@ -27,4 +29,8 @@ class Form extends Model
     protected $hidden = [
         'id',
     ];
+
+    public function workspace() {
+        return $this->hasOne(Workspace::class);
+    }
 }
