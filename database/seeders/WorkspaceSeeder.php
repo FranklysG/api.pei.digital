@@ -18,8 +18,11 @@ class WorkspaceSeeder extends Seeder
      */
     public function run()
     {        
-        Workspace::create([]);
-
-        Workspace::create([]);
+        Workspace::create([
+            'name' => 'Pei Digital'
+        ]);
+        Workspace::create([
+            'name' => 'Escola Educar'
+        ]);
     }
 }

@@ -18,5 +18,6 @@ class DatabaseSeeder extends Seeder
         $this->call(WorkspaceSeeder::class);
         $this->call(UserWorkspaceSeeder::class);
         $this->call(SettingSeeder::class);
+        $this->call(FormSeeder::class);
     }
 }
