@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Form\FormController;
+use App\Http\Controllers\Generate\GenerateController;
 use App\Http\Controllers\Setting\SettingController;
 use App\Http\Controllers\Workspace\WorkspaceController;
 use Illuminate\Http\Request;
@@ -34,4 +35,6 @@ Route::middleware(['auth:sanctum'])->group(function () {
     Route::put('/forms', [FormController::class, 'update'])->name('api.form.update');
     Route::post('/forms', [FormController::class, 'store'])->name('api.form.store');
     Route::delete('/forms', [FormController::class, 'destroy'])->name('api.form.destroy');
+    
+    Route::get('/generate', [GenerateController::class, 'show'])->name('api.generate.show');
 });
