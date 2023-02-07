@@ -27,9 +27,10 @@ class FormRepository extends BaseRepository{
     }
 
     public function create($data){
-        $hash = [ 'token' => Crypt::encryptString(time())];
-        $data = array_merge($data, $hash);
-        
+        $data = array_merge($data, [
+            'user_id' => Auth::user()->id
+        ]);
+               
         $model = $this->model->create($data);
         return $model->fresh();
     }

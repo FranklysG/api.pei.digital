@@ -28,5 +28,9 @@ class UserWorkspaceSeeder extends Seeder
             'user_id' => 2,
             'workspace_id' => 2
         ]);
+        UserWorkspace::create([
+            'user_id' => 3,
+            'workspace_id' => 2
+        ]);
     }
 }

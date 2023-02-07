@@ -16,6 +16,7 @@ namespace Database\Factories;
 
 use App\Models\Workspace;
 use Illuminate\Database\Eloquent\Factories\Factory;
+use Illuminate\Support\Facades\Auth;
 
 /**
  * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Form>
@@ -31,7 +32,11 @@ class FormFactory extends Factory
     {
         return [
             'workspace_id' => Workspace::factory()->create()->id,
-            'name' => 'Plano de Estudo - '.$this->faker->firstName(),
+            'user_id' => Auth::user()->id,
+            'name' => 'Plano de Estudo - '.$this->faker->name(),
+            'type' => 'success',
+            'status' => 'Aprovado',
+            'date' => date('M d, Y')
         ];
     }
 }

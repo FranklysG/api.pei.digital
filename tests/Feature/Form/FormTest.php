@@ -24,9 +24,9 @@ class FormTest extends TestCase
 
         $response = $this->post(route('api.form.store'), $data);
         $forms = $response->json();
-
+        
         $response->assertStatus(200);
-        $this->assertEquals(5, count($forms['content']['data']));
+        $this->assertEquals(10, count($forms['content']['data']));
         $this->assertNotNull($forms);
     }
 
@@ -45,7 +45,7 @@ class FormTest extends TestCase
         
         $response->assertStatus(200);
         $this->assertNotNull($form);
-        $this->assertEquals(5, count($form['content']['data']));
+        $this->assertEquals(10, count($form['content']['data']));
      }
 
      /** @test */

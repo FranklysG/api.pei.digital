@@ -45,4 +45,8 @@ class User extends Authenticatable
     public function workspaces() {
         return $this->hasMany(Workspace::class, 'user_workspaces');
     }
+
+    public function forms() {
+        return $this->hasMany(Form::class);
+    }
 }

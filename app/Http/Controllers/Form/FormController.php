@@ -40,7 +40,6 @@ class FormController extends Controller
     {
         $data = $request->validated();
         $uuid = $data['uuid'];
-        
         $forms = $repository->update($uuid, $data);
         if($forms){
             return $this->apiResponse->successResponse('Forms update with success', $forms->toArray());
