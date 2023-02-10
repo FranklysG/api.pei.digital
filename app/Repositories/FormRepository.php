@@ -33,7 +33,7 @@ class FormRepository extends BaseRepository{
             'user_id' => Auth::user()->id,
             'workspace_id' => $workspace->id 
         ]);
-               
+        
         $model = $this->model->create($data);
         return $model->fresh();
     }

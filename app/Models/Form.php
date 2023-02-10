@@ -16,6 +16,8 @@ class Form extends Model
      * @var array<int, string>
      */
     protected $fillable = [
+        'workspace_id',
+        'user_id',
         'uuid',
         'name',
         'type',
