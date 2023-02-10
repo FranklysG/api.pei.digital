@@ -31,7 +31,7 @@ class SettingTest extends TestCase
 
         $response->assertStatus(200);
         $this->assertNotNull($settings);
-        $this->assertEquals(8, count($settings['content']['data']));
+        $this->assertEquals(8, count($settings['data']));
     }
 
      /** @test */
@@ -56,7 +56,7 @@ class SettingTest extends TestCase
         
         $response->assertStatus(200);
         $this->assertNotNull($settings);
-        $this->assertEquals(8, count($settings['content']['data']));
+        $this->assertEquals(8, count($settings['data']));
      }
 
      /** @test */
@@ -75,6 +75,6 @@ class SettingTest extends TestCase
         $settings = $response->json();
         $response->assertStatus(200);
         $this->assertNotNull($settings);
-        $this->assertEquals(8, count($settings['content']['data']));
+        $this->assertEquals(8, count($settings['data']));
      }
 }

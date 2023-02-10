@@ -26,7 +26,7 @@ class FormTest extends TestCase
         $forms = $response->json();
         
         $response->assertStatus(200);
-        $this->assertEquals(8, count($forms['content']['data']));
+        $this->assertEquals(8, count($forms['data']));
         $this->assertNotNull($forms);
     }
 
@@ -45,7 +45,7 @@ class FormTest extends TestCase
         
         $response->assertStatus(200);
         $this->assertNotNull($form);
-        $this->assertEquals(8, count($form['content']['data']));
+        $this->assertEquals(8, count($form['data']));
      }
 
      /** @test */
@@ -60,7 +60,7 @@ class FormTest extends TestCase
         $forms = $response->json();
         $response->assertStatus(200);
         $this->assertNotNull($forms);
-        $this->assertEquals(3, count($forms['content']['data']));
+        $this->assertEquals(3, count($forms['data']));
      }
 
      /** @test */
