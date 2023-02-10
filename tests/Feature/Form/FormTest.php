@@ -19,14 +19,14 @@ class FormTest extends TestCase
         $workspace = $this->workspace();
         $data = [
             "name" => 'Plano de estudo 3° B',
-            "workspace_id" => $workspace->id 
+            "workspace_uuid" => $workspace->uuid 
         ];
 
         $response = $this->post(route('api.form.store'), $data);
         $forms = $response->json();
         
         $response->assertStatus(200);
-        $this->assertEquals(10, count($forms['content']['data']));
+        $this->assertEquals(8, count($forms['content']['data']));
         $this->assertNotNull($forms);
     }
 
@@ -45,7 +45,7 @@ class FormTest extends TestCase
         
         $response->assertStatus(200);
         $this->assertNotNull($form);
-        $this->assertEquals(10, count($form['content']['data']));
+        $this->assertEquals(8, count($form['content']['data']));
      }
 
      /** @test */

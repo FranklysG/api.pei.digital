@@ -20,14 +20,12 @@ class ApiResponseService
      */
     public function errorResponse(string $message,  $headerCodeError = null, $errorCode = null){
 
-        $headerCode = $headerCodeError ?? 400;
-        $content = [
+        return [
+            'headerCode' => $headerCodeError ?? 400,
             'status' => false,
             'message' => $message,
             'errorCode' => $errorCode
         ];
-
-        return compact('headerCode', 'content');
     }
 
     /**
@@ -38,13 +36,12 @@ class ApiResponseService
      */
     public function successResponse(string $message, array $data, int $headerCode = 200){
 
-        $content = [
+        return [
+            'headerCode' => $headerCode,
             'status' => true,
             'message' => $message,
             'data' => $data
         ];
-
-        return compact('headerCode', 'content');
     }
 
 }

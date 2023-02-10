@@ -15,7 +15,9 @@ class Workspace extends Model
      *
      * @var array<int, string>
      */
-    protected $fillable = [];
+    protected $fillable = [
+        'name'
+    ];
 
     /**
      * The attributes that should be hidden for serialization.

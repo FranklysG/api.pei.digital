@@ -25,7 +25,7 @@ class StoreRequest extends FormRequest
     {
         return [
             'name' => 'string|required',
-            'workspace_id' => 'numeric|required'
+            'workspace_uuid' => 'string|required'
         ];
     }
 }

@@ -34,10 +34,11 @@ class RegisteredUserController extends Controller
             'email' => $request->email,
             'password' => Hash::make($request->password),
         ]);
-
-        $workspace = Workspace::create();
-        $workspace->users()->attach($user->id);
         
+        $workspace = Workspace::create([
+            'name' => 'you workspace'
+        ]);
+        $workspace->users()->attach($user->id);
         event(new Registered($user));
         
         Auth::login($user);

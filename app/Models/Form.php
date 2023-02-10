@@ -16,13 +16,11 @@ class Form extends Model
      * @var array<int, string>
      */
     protected $fillable = [
-        'workspace_id',
-        'user_id',
         'uuid',
         'name',
         'type',
         'status',
-        'date',
+        'date'
     ];
 
     /**
@@ -32,7 +30,9 @@ class Form extends Model
      */
     protected $hidden = [
         'id',
-        'user'
+        'user',
+        'workspace_id',
+        'user_id'
     ];
 
     protected $appends = ['author'];
@@ -47,6 +47,6 @@ class Form extends Model
 
     public function getAuthorAttribute()
     {
-        return $this->user->name;
+        return $this->user?->name;
     }
 }

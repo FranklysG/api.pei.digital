@@ -22,6 +22,8 @@ class WorkspaceFactory extends Factory
      */
     public function definition()
     {
-        return [];
+        return [
+            'name' => 'Workspace - '.$this->faker->name(),
+        ];
     }
 }

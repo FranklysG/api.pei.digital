@@ -18,12 +18,16 @@ class WorkspaceTest extends TestCase
     public function user_try_create_new_workspace_with_user()
     {
         $this->signIn();
-        $response = $this->post(route('api.workspace.store'));
+        $data = [
+            'name' => 'Workspace - Pei Digital'
+        ];
+
+        $response = $this->post(route('api.workspace.store'), $data);
         $workspace = $response->json();
 
         $response->assertStatus(200);
         $this->assertNotNull($workspace);
-        $this->assertEquals(3, count($workspace['content']['data']));
+        $this->assertEquals(4, count($workspace['content']['data']));
     }
 
     /** @test */

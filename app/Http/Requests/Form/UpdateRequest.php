@@ -25,7 +25,9 @@ class UpdateRequest extends FormRequest
     {
         return [
             'uuid' => 'string|required',
-            'name' => 'string'
+            'name' => 'string',
+            'status' => 'string',
+            'type' => 'string'
         ];
     }
 }

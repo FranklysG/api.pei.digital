@@ -15,6 +15,7 @@
 namespace App\Repositories;
 
 use App\Models\Form;
+use App\Models\Workspace;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Crypt;
@@ -27,8 +28,10 @@ class FormRepository extends BaseRepository{
     }
 
     public function create($data){
+        $workspace = Workspace::where('uuid', $data['workspace_uuid'])->first();
         $data = array_merge($data, [
-            'user_id' => Auth::user()->id
+            'user_id' => Auth::user()->id,
+            'workspace_id' => $workspace->id 
         ]);
                
         $model = $this->model->create($data);
