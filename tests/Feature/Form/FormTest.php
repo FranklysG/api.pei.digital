@@ -19,20 +19,20 @@ class FormTest extends TestCase
         $workspace = $this->workspace();
         $data = [
             "name" => 'Plano de estudo 3° B',
-            "workspace_uuid" => $workspace->uuid 
+            "workspace_uuid" => $workspace->uuid
         ];
 
         $response = $this->post(route('api.form.store'), $data);
         $forms = $response->json();
-        
+
         $response->assertStatus(200);
         $this->assertEquals(8, count($forms['data']));
         $this->assertNotNull($forms);
     }
 
-     /** @test */
-     public function user_try_update_forms_user()
-     {
+    /** @test */
+    public function user_try_update_forms_user()
+    {
         $this->signIn();
         $form = Form::factory()->create();
 
@@ -42,15 +42,15 @@ class FormTest extends TestCase
         ];
         $response = $this->put(route('api.form.update'), $data);
         $form = $response->json();
-        
+
         $response->assertStatus(200);
         $this->assertNotNull($form);
         $this->assertEquals(8, count($form['data']));
-     }
+    }
 
-     /** @test */
-     public function user_try_get_forms_by_user()
-     {
+    /** @test */
+    public function user_try_get_forms_by_user()
+    {
         $workspace = $this->workspace();
         Form::factory(3)->create([
             'workspace_id' => $workspace->id
@@ -61,11 +61,31 @@ class FormTest extends TestCase
         $response->assertStatus(200);
         $this->assertNotNull($forms);
         $this->assertEquals(3, count($forms['data']));
-     }
+    }
 
-     /** @test */
-     public function user_try_delete_forms_by_uuid()
-     {
+    /** @test */
+    public function user_try_get_forms_by_uuid()
+    {
+        $workspace = $this->workspace();
+        $forms = Form::factory(3)->create([
+            'workspace_id' => $workspace->id
+        ]);
+
+        $data = [
+            "uuid" => $forms[0]->uuid
+        ];
+
+        $response = $this->get(route('api.form.edit', $data));
+        $forms = $response->json();
+        
+        $response->assertStatus(200);
+        $this->assertNotNull($forms);
+        $this->assertEquals(8, count($forms['data']));
+    }
+
+    /** @test */
+    public function user_try_delete_forms_by_uuid()
+    {
         $workspace = $this->workspace();
         Form::factory(3)->create([
             'workspace_id' => $workspace->id
@@ -78,7 +98,7 @@ class FormTest extends TestCase
 
         $response = $this->delete(route('api.form.destroy'), $data);
         $response->json();
-        
+
         $response->assertStatus(200);
-     }
+    }
 }

@@ -7,6 +7,7 @@ use App\Repositories\FormRepository;
 use App\Http\Requests\Form\DeleteRequest;
 use App\Http\Requests\Form\StoreRequest;
 use App\Http\Requests\Form\UpdateRequest;
+use Illuminate\Http\Request;
 
 class FormController extends Controller
 {
@@ -55,10 +56,31 @@ class FormController extends Controller
      * @param  \App\Repositories\FormRepository  $repository
      * @return \Illuminate\Http\Response
      */
-    public function show(FormRepository $repository)
+    public function show(Request $request, FormRepository $repository)
     {
         $forms = $repository->getFormByWorkspaceId();
+        if($request->uuid){
+            $forms = $repository->getByUuid($request->uuid);
+        }
         
+        if($forms){
+            return $this->apiResponse->successResponse('List of Forms', $forms->toArray());
+        }else {
+            return $this->apiResponse->errorResponse('Wrong error', []);
+        }
+    }
+
+    /**
+     * Display the specified resource.
+     *
+     * @param  \App\Http\Requests\Form\UpdateRequest  $request
+     * @param  \App\Repositories\FormRepository  $repository
+     * @return \Illuminate\Http\Response
+     */
+    public function edit(Request $request, FormRepository $repository)
+    {
+        $forms = $repository->getByUuid($request->uuid);
+
         if($forms){
             return $this->apiResponse->successResponse('List of Forms', $forms->toArray());
         }else {
