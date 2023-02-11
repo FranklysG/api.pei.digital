@@ -16,6 +16,7 @@ namespace Database\Factories;
 
 use App\Models\Workspace;
 use Illuminate\Database\Eloquent\Factories\Factory;
+use Illuminate\Support\Facades\Auth;
 
 /**
  * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Setting>
@@ -29,8 +30,9 @@ class SettingFactory extends Factory
      */
     public function definition()
     {
+        $user = Auth::user();
         return [
-            'workspace_id' => Workspace::factory()->create()->id,
+            'user_id' => $user->id,
             'first_name' => $this->faker->firstName(),
             'last_name' => $this->faker->lastName(),
             'contact_movel' => true,

@@ -62,4 +62,27 @@ class WorkspaceTest extends TestCase
         $response->assertStatus(200);
         $this->assertNotNull($workspace);
      }
+
+
+     /** @test */
+    //  public function user_try_select_settings_workspace()
+    //  {
+    //     $user = $this->signIn();
+        
+    //     UserWorkspace::create([
+    //         'user_id' => $user->id
+    //     ]);
+        
+    //     Setting::factory()->create();
+        
+    //     $workspace = Workspace::factory()->create();
+    //     $data = [
+    //         'workspace_uuid' => $workspace->uuid
+    //     ];
+    //     $response = $this->post(route('api.setting.workspace'), $data);
+    //     $settings = $response->json();
+    //     $response->assertStatus(200);
+    //     $this->assertNotNull($settings);
+    //     $this->assertEquals(8, count($settings['data']));
+    //  }
 }

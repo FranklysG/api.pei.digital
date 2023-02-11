@@ -6,6 +6,7 @@ use App\Models\Setting;
 use App\Models\Workspace;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 
 class SettingSeeder extends Seeder
@@ -17,9 +18,8 @@ class SettingSeeder extends Seeder
      */
     public function run()
     {
-        $workspace = Workspace::first();
         Setting::create([
-            'workspace_id' => $workspace->id,
+            'user_id' => 1,
             'first_name' => 'John',
             'last_name' => 'Doe',
             'contact_movel' => true,

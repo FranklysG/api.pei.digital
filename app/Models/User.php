@@ -49,4 +49,8 @@ class User extends Authenticatable
     public function forms() {
         return $this->hasMany(Form::class);
     }
+    
+    public function setting() {
+        return $this->hasOne(Setting::class);
+    }
 }

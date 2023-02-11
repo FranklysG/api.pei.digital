@@ -22,20 +22,24 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Crypt;
 use Illuminate\Support\Facades\Hash;
 
-class SettingRepository extends BaseRepository {
+class SettingRepository extends BaseRepository
+{
 
-    public function __construct(){
+    public function __construct()
+    {
         parent::__construct(Setting::class);
     }
 
-    public function getSettingByUser(){
+    public function getSettingByUser()
+    {
         $user = Auth::user();
-        $userWorkspaces = UserWorkspace::where('user_id', $user->id)->first()->toArray();
-        $workspaceId = $userWorkspaces['workspace_id'];
-        return $this->model->where('workspace_id', $workspaceId)->first();
+        return $this->model->where('user_id', $user->id)->first();
     }
 
-    public function create($data){
+    public function create($data)
+    {
+        $user = Auth::user();
+        $data = array_merge($data, ['user_id' => $user->id]);
         $model = $this->model->create($data);
         return $model->fresh();
     }

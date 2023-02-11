@@ -5,7 +5,9 @@ namespace App\Http\Controllers\Setting;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Setting\StoreRequest;
 use App\Http\Requests\Setting\UpdateRequest;
+use App\Http\Requests\Setting\WorkspaceRequest;
 use App\Repositories\SettingRepository;
+use App\Repositories\UserWorkspaceRepository;
 
 class SettingController extends Controller
 {
@@ -27,7 +29,7 @@ class SettingController extends Controller
             return $this->apiResponse->errorResponse('Wrong error', []);
         }
     }
-
+    
     /**
      * Update a newly created resource in storage.
      *

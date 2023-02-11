@@ -31,12 +31,12 @@ class SettingTest extends TestCase
 
         $response->assertStatus(200);
         $this->assertNotNull($settings);
-        $this->assertEquals(8, count($settings['data']));
+        $this->assertEquals(7, count($settings['data']));
     }
 
-     /** @test */
-     public function user_try_update_settings_user()
-     {
+    /** @test */
+    public function user_try_update_settings_user()
+    {
         $user = $this->signIn();
         $workspace = Workspace::factory()->create();
         UserWorkspace::create([
@@ -44,7 +44,7 @@ class SettingTest extends TestCase
             'workspace_id' => $workspace->id
         ]);
         $settings = Setting::factory()->create([
-            'workspace_id' => $workspace->id
+            'user_id' => $user->id,
         ]);
         $data = [
             'uuid' => $settings->uuid,
@@ -53,15 +53,15 @@ class SettingTest extends TestCase
         ];
         $response = $this->put(route('api.setting.update'), $data);
         $settings = $response->json();
-        
+
         $response->assertStatus(200);
         $this->assertNotNull($settings);
-        $this->assertEquals(8, count($settings['data']));
-     }
+        $this->assertEquals(7, count($settings['data']));
+    }
 
-     /** @test */
-     public function user_try_get_settings_by_user()
-     {
+    /** @test */
+    public function user_try_get_settings_by_user()
+    {
         $user = $this->signIn();
         $workspace = Workspace::factory()->create();
         UserWorkspace::create([
@@ -69,12 +69,12 @@ class SettingTest extends TestCase
             'workspace_id' => $workspace->id
         ]);
         Setting::factory()->create([
-            'workspace_id' => $workspace->id
+            'user_id' => $user->id,
         ]);
         $response = $this->get(route('api.setting.show'));
         $settings = $response->json();
         $response->assertStatus(200);
         $this->assertNotNull($settings);
-        $this->assertEquals(8, count($settings['data']));
-     }
+        $this->assertEquals(7, count($settings['data']));
+    }
 }

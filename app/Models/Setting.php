@@ -16,6 +16,7 @@ class Setting extends Model
      * @var array<int, string>
      */
     protected $fillable = [
+        'user_id',
         'uuid',
         'first_name',
         'last_name',
@@ -30,10 +31,11 @@ class Setting extends Model
      */
     protected $hidden = [
         'id',
+        'user_id'
     ];
 
-    public function workspace() 
+    public function user() 
     {
-        return $this->belongsTo(Workspace::class);
+        return $this->belongsTo(User::class);
     }
 }

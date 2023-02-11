@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('settings', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('workspace_id')->nullable()->constrained();
+            $table->foreignId('user_id')->constrained();
             $table->string('uuid')->unique();
             $table->string('first_name');
             $table->string('last_name');
