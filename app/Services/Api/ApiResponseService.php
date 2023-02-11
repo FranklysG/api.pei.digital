@@ -39,7 +39,7 @@ class ApiResponseService
         return [
             'headerCode' => $headerCode,
             'status' => true,
-            'message' => $message,
+            'message' => ($message),
             'data' => $data
         ];
     }

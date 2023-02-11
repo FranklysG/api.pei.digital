@@ -22,7 +22,7 @@ class SettingController extends Controller
         $data = $request->validated();
         $settings = $repository->create($data);
         if($settings){
-            return $this->apiResponse->successResponse('Settings created with success', $settings->toArray());
+            return $this->apiResponse->successResponse('Configurações salvas :)', $settings->toArray());
         }else {
             return $this->apiResponse->errorResponse('Wrong error', []);
         }
@@ -42,7 +42,7 @@ class SettingController extends Controller
         
         $settings = $repository->update($uuid, $data);
         if($settings){
-            return $this->apiResponse->successResponse('Settings update with success', $settings->toArray());
+            return $this->apiResponse->successResponse('Configurações atualizadas :)', $settings->toArray());
         }else {
             return $this->apiResponse->errorResponse('Wrong error', []);
         }

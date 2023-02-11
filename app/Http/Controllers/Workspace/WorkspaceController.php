@@ -22,7 +22,7 @@ class WorkspaceController extends Controller
         $data = $request->validated();
         $workspace = $repository->create($data);
         if($workspace){
-            return $this->apiResponse->successResponse('Workspace created with success', $workspace->toArray());
+            return $this->apiResponse->successResponse('Colegio criado com sucesso :)', $workspace->toArray());
         }else {
             return $this->apiResponse->errorResponse('Wrong error', []);
         }
@@ -56,7 +56,7 @@ class WorkspaceController extends Controller
         $status = $repository->delete($uuid);
 
         if($status){
-            return $this->apiResponse->successResponse('Workspace deleted with success', []);
+            return $this->apiResponse->successResponse('Colegio deletado com sucesso :)', []);
         }else {
             return $this->apiResponse->errorResponse('Error deleting', []);
 

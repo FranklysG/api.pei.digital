@@ -31,11 +31,11 @@ Route::middleware(['auth:sanctum'])->group(function () {
     Route::put('/settings', [SettingController::class, 'update'])->name('api.setting.update');
     Route::post('/settings', [SettingController::class, 'store'])->name('api.setting.store');
     
+    Route::get('/forms/generate', [GenerateController::class, 'show'])->name('api.form.generate.show');
+    
     Route::get('/forms', [FormController::class, 'show'])->name('api.form.show');
-    Route::get('/forms/{uuid}', [FormController::class, 'edit'])->name('api.form.edit');
     Route::put('/forms', [FormController::class, 'update'])->name('api.form.update');
     Route::post('/forms', [FormController::class, 'store'])->name('api.form.store');
     Route::delete('/forms', [FormController::class, 'destroy'])->name('api.form.destroy');
     
-    Route::get('/generate', [GenerateController::class, 'show'])->name('api.generate.show');
 });
