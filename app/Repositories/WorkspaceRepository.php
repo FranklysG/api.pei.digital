@@ -21,13 +21,16 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Crypt;
 use Illuminate\Support\Facades\Hash;
 
-class WorkspaceRepository extends BaseRepository{
+class WorkspaceRepository extends BaseRepository
+{
 
-    public function __construct(){
+    public function __construct()
+    {
         parent::__construct(Workspace::class);
     }
 
-    public function getWorkspacesByUser(){
+    public function getWorkspacesByUser()
+    {
         $user = Auth::user();
         $userWorkspaces = UserWorkspace::where('user_id', $user->id)->get();
         $workspace_ids = [];
@@ -37,9 +40,10 @@ class WorkspaceRepository extends BaseRepository{
         return $this->model->whereIn('id', $workspace_ids)->get();
     }
 
-    public function create($data){
+    public function create($data)
+    {
         $user = Auth::user();
-        
+
         $model = $this->model->create($data);
         $model->users()->attach($user->id);
         return $model->fresh();
@@ -55,6 +59,21 @@ class WorkspaceRepository extends BaseRepository{
 
         $workspace->update($data);
         return $workspace->fresh();
+    }
+
+    public function change($uuid)
+    {
+        try {
+            $workspace = $this->getByUuid($uuid);
+        } catch (ModelNotFoundException $exception) {
+            return false;
+        }
+        $user = Auth::user();
+        $userWorkspace = UserWorkspace::where('user_id', $user->id)->first();
+        $userWorkspace->update([
+            'workspace_id' => $workspace->id
+        ]);
+        return $workspace;
     }
 
     public function delete($uuid)

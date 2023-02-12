@@ -2,6 +2,7 @@
 
 namespace Tests\Feature;
 
+use App\Models\Setting;
 use App\Models\UserWorkspace;
 use App\Models\Workspace;
 use Database\Factories\WorkspaceFactory;
@@ -65,24 +66,26 @@ class WorkspaceTest extends TestCase
 
 
      /** @test */
-    //  public function user_try_select_settings_workspace()
-    //  {
-    //     $user = $this->signIn();
+     public function user_try_change_workspace()
+     {
+        $user = $this->signIn();
         
-    //     UserWorkspace::create([
-    //         'user_id' => $user->id
-    //     ]);
+        UserWorkspace::create([
+            'user_id' => $user->id
+        ]);
         
-    //     Setting::factory()->create();
+        Setting::factory()->create([
+            'user_id' => $user->id
+        ]);
         
-    //     $workspace = Workspace::factory()->create();
-    //     $data = [
-    //         'workspace_uuid' => $workspace->uuid
-    //     ];
-    //     $response = $this->post(route('api.setting.workspace'), $data);
-    //     $settings = $response->json();
-    //     $response->assertStatus(200);
-    //     $this->assertNotNull($settings);
-    //     $this->assertEquals(8, count($settings['data']));
-    //  }
+        $workspace = Workspace::factory(3)->create();
+        $data = [
+            'uuid' => $workspace[1]->uuid
+        ];
+        $response = $this->put(route('api.workspace.change'), $data);
+        $settings = $response->json();
+        $response->assertStatus(200);
+        $this->assertNotNull($settings);
+        $this->assertEquals(4, count($settings['data']));
+     }
 }
