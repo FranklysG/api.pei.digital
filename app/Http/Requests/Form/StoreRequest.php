@@ -25,7 +25,17 @@ class StoreRequest extends FormRequest
     {
         return [
             'uuid', 'string',
+            'title' => 'string|required',
             'name' => 'string|required',
+            'year' => 'string|required',
+            'class' => 'string|required',
+            'bout' => 'string|required',
+            'birthdate' => 'string|required',
+            'father' => 'string|required',
+            'mother' => 'string|required',
+            'diagnostic' => 'string|required',
+            'especialist' => 'string|required',
+            'description' => 'string|required',
             'workspace_uuid' => 'string|required'
         ];
     }

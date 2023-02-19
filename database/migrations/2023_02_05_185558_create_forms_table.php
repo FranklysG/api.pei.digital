@@ -18,7 +18,17 @@ return new class extends Migration
             $table->foreignId('workspace_id')->constrained();
             $table->foreignId('user_id')->constrained();
             $table->string('uuid')->unique();
+            $table->string('title');
             $table->string('name');
+            $table->string('year');
+            $table->string('class');
+            $table->string('bout');
+            $table->string('birthdate');
+            $table->string('father');
+            $table->string('mother');
+            $table->string('diagnostic');
+            $table->string('especialist');
+            $table->text('description');
             $table->string('type')->default('processing');
             $table->string('status')->default('Processando');
             $table->string('date')->default(date('M d, Y'));

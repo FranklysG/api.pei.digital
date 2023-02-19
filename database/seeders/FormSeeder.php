@@ -17,7 +17,7 @@ class FormSeeder extends Seeder
      */
     public function run()
     {
-        Form::create([
+        Form::factory()->create([
             'workspace_id' => 1,
             'user_id' => 1,
             'name' => 'Plano de estudo 3° B',
@@ -25,7 +25,7 @@ class FormSeeder extends Seeder
             'status' => 'Processando',
             'date' => date('M d, Y')
         ]);
-        Form::create([
+        Form::factory()->create([
             'workspace_id' => 1,
             'user_id' => 1,
             'name' => 'Plano de estudo 2° B',
@@ -33,7 +33,7 @@ class FormSeeder extends Seeder
             'status' => 'Aprovado',
             'date' => date('M d, Y')
         ]);
-        Form::create([
+        Form::factory()->create([
             'workspace_id' => 1,
             'user_id' => 1,
             'name' => 'Plano de estudo 1° B',
@@ -41,7 +41,7 @@ class FormSeeder extends Seeder
             'status' => 'Aprovado',
             'date' => date('M d, Y')
         ]);
-        Form::create([
+        Form::factory()->create([
             'workspace_id' => 2,
             'user_id' => 2,
             'name' => 'Plano de estudo 3° A',

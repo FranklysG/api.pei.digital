@@ -19,7 +19,17 @@ class Form extends Model
         'workspace_id',
         'user_id',
         'uuid',
+        'title',
         'name',
+        'year',
+        'class',
+        'bout',
+        'birthdate',
+        'father',
+        'mother',
+        'diagnostic',
+        'especialist',
+        'description',
         'type',
         'status',
         'date'
@@ -39,11 +49,13 @@ class Form extends Model
 
     protected $appends = ['author'];
 
-    public function workspace() {
+    public function workspace()
+    {
         return $this->hasOne(Workspace::class);
     }
 
-    public function user() {
+    public function user()
+    {
         return $this->belongsTo(User::class);
     }
 

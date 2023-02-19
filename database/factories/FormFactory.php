@@ -32,8 +32,17 @@ class FormFactory extends Factory
     {
         return [
             'workspace_id' => Workspace::factory()->create()->id,
-            'user_id' => Auth::user()->id,
-            'name' => 'Plano de Estudo - '.$this->faker->name(),
+            'title' => 'Plano de Estudo - '.$this->faker->name(),
+            'name' => $this->faker->name(),
+            'year' => $this->faker->randomNumber().'°',
+            'class' => $this->faker->randomLetter(['A', 'B', 'C']),
+            'bout' => 'Matutino',
+            'birthdate' => $this->faker->date('d/m/Y'),
+            'father' => $this->faker->firstNameMale(),
+            'mother' => $this->faker->firstNameFemale(),
+            'diagnostic' => 'CID 10 F 84.0 (Autismo Infantil)',
+            'especialist' => 'Dr. '.$this->faker->name(),
+            'description' => $this->faker->realText('2000'),
             'type' => 'success',
             'status' => 'Aprovado',
             'date' => date('M d, Y')
