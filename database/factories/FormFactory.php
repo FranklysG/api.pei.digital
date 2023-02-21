@@ -14,6 +14,7 @@
 
 namespace Database\Factories;
 
+use App\Models\Specialist;
 use App\Models\Workspace;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Support\Facades\Auth;
@@ -31,7 +32,6 @@ class FormFactory extends Factory
     public function definition()
     {
         return [
-            'workspace_id' => Workspace::factory()->create()->id,
             'title' => 'Plano de Estudo - '.$this->faker->name(),
             'name' => $this->faker->name(),
             'year' => $this->faker->randomNumber(1).'°',
@@ -41,7 +41,6 @@ class FormFactory extends Factory
             'father' => $this->faker->firstNameMale().' '.$this->faker->lastName(),
             'mother' => $this->faker->firstNameFemale().' '.$this->faker->lastName(),
             'diagnostic' => 'CID 10 F 84.0 (Autismo Infantil)',
-            'especialist' => 'Dr. '.$this->faker->name(),
             'description' => $this->faker->realText('2000'),
             'type' => 'success',
             'status' => 'Aprovado',

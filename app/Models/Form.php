@@ -17,6 +17,7 @@ class Form extends Model
      */
     protected $fillable = [
         'workspace_id',
+        'specialist_id',
         'user_id',
         'uuid',
         'title',
@@ -28,7 +29,6 @@ class Form extends Model
         'father',
         'mother',
         'diagnostic',
-        'especialist',
         'description',
         'type',
         'status',
@@ -44,6 +44,7 @@ class Form extends Model
         'id',
         'user',
         'workspace_id',
+        'specialist_id',
         'user_id'
     ];
 

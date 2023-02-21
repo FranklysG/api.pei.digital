@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Http\Requests\Workspace;
+namespace App\Http\Requests\Specialist;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class DeleteRequest extends FormRequest
+class StoreRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -24,7 +24,10 @@ class DeleteRequest extends FormRequest
     public function rules()
     {
         return [
-            'uuid' => 'string|required',
+            'workspace_uuid' => 'string|required',
+            'name' => 'string|required',
+            'area'  => 'string|required',
+            'residence' => 'string|required'
         ];
     }
 }

@@ -2,11 +2,11 @@
 
 namespace Database\Seeders;
 
-use App\Models\Workspace;
+use App\Models\Specialist;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
-class WorkspaceSeeder extends Seeder
+class SpecialistSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -14,12 +14,12 @@ class WorkspaceSeeder extends Seeder
      * @return void
      */
     public function run()
-    {        
-        Workspace::create([
-            'name' => 'Escola Adenor Abelo'
+    {
+        Specialist::factory(3)->create([
+            'workspace_id' => 1
         ]);
-        Workspace::create([
-            'name' => 'Escola Educar'
+        Specialist::factory(2)->create([
+            'workspace_id' => 2
         ]);
     }
 }

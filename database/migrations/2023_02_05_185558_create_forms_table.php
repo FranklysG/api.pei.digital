@@ -17,6 +17,7 @@ return new class extends Migration
             $table->id();
             $table->foreignId('workspace_id')->constrained();
             $table->foreignId('user_id')->constrained();
+            $table->foreignId('specialist_id')->constrained();
             $table->string('uuid')->unique();
             $table->string('title');
             $table->string('name');
@@ -27,7 +28,6 @@ return new class extends Migration
             $table->string('father');
             $table->string('mother');
             $table->string('diagnostic');
-            $table->string('especialist');
             $table->text('description');
             $table->string('type')->default('processing');
             $table->string('status')->default('Processando');
@@ -43,6 +43,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('user_workspaces');
+        Schema::dropIfExists('forms');
     }
 };

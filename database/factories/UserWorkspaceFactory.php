@@ -31,7 +31,6 @@ class UserWorkspaceFactory extends Factory
     public function definition()
     {
         return [
-            'workspace_id' => Workspace::factory()->create()->id,
             'user_id' => User::factory()->create()->id,
         ];
     }

@@ -3,6 +3,7 @@
 use App\Http\Controllers\Form\FormController;
 use App\Http\Controllers\Generate\GenerateController;
 use App\Http\Controllers\Setting\SettingController;
+use App\Http\Controllers\Specialist\SpecialistController;
 use App\Http\Controllers\Workspace\WorkspaceController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -29,15 +30,19 @@ Route::middleware(['auth:sanctum'])->group(function () {
     Route::put('/workspace/change', [WorkspaceController::class, 'change'])->name('api.workspace.change');
     Route::delete('/workspace', [WorkspaceController::class, 'destroy'])->name('api.workspace.destroy');
     
-    Route::get('/settings', [SettingController::class, 'show'])->name('api.setting.show');
-    Route::post('/settings', [SettingController::class, 'store'])->name('api.setting.store');
-    Route::put('/settings', [SettingController::class, 'update'])->name('api.setting.update');
+    Route::get('/setting', [SettingController::class, 'show'])->name('api.setting.show');
+    Route::post('/setting', [SettingController::class, 'store'])->name('api.setting.store');
+    Route::put('/setting', [SettingController::class, 'update'])->name('api.setting.update');
     
     Route::get('/forms/generate', [GenerateController::class, 'show'])->name('api.form.generate.show');
     
-    Route::get('/forms', [FormController::class, 'show'])->name('api.form.show');
-    Route::post('/forms', [FormController::class, 'store'])->name('api.form.store');
-    Route::put('/forms', [FormController::class, 'update'])->name('api.form.update');
-    Route::delete('/forms', [FormController::class, 'destroy'])->name('api.form.destroy');
-    
+    Route::get('/form', [FormController::class, 'show'])->name('api.form.show');
+    Route::post('/form', [FormController::class, 'store'])->name('api.form.store');
+    Route::put('/form', [FormController::class, 'update'])->name('api.form.update');
+    Route::delete('/form', [FormController::class, 'destroy'])->name('api.form.destroy');
+
+    Route::get('/specialist', [SpecialistController::class, 'show'])->name('api.specialist.show');
+    Route::post('/specialist', [SpecialistController::class, 'store'])->name('api.specialist.store');
+    Route::put('/specialist', [SpecialistController::class, 'update'])->name('api.specialist.update');
+    Route::delete('/specialist', [SpecialistController::class, 'destroy'])->name('api.specialist.destroy');
 });
