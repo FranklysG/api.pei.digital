@@ -15,11 +15,10 @@
 namespace App\Repositories;
 
 use App\Models\Form;
+use App\Models\Specialist;
 use App\Models\Workspace;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Crypt;
-use Illuminate\Support\Facades\Hash;
 
 class FormRepository extends BaseRepository{
 
@@ -29,9 +28,11 @@ class FormRepository extends BaseRepository{
 
     public function create($data){
         $workspace = Workspace::where('uuid', $data['workspace_uuid'])->first();
+        $specialist = Specialist::where('uuid', $data['specialist_uuid'])->first();
         $data = array_merge($data, [
             'user_id' => Auth::user()->id,
-            'workspace_id' => $workspace->id 
+            'workspace_id' => $workspace->id,
+            'specialist_id' => $specialist->id 
         ]);
         
         $model = $this->model->create($data);

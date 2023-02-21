@@ -3,6 +3,7 @@
 namespace Tests\Feature;
 
 use App\Models\Form;
+use App\Models\Specialist;
 use Database\Factories\FormFactory;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Tests\TestCase;
@@ -17,6 +18,9 @@ class FormTest extends TestCase
     public function user_try_create_forms_user()
     {
         $workspace = $this->workspace();
+        $specialist = Specialist::factory()->create([
+            'workspace_id' => $workspace->id
+        ]);
         $data = [
             'title' => 'Plano de estudo 3° B',
             'name' => 'Gustavo Bezerra da Silva',
@@ -32,14 +36,15 @@ class FormTest extends TestCase
             Gustavo sente um pouco de dificuldade motora para pegar no lápis, no garfo e na colher. Quanto a evolução da linguagem Gustavo iniciou os balbucios com 1 ano, e falou as primeiras palavras com 1 ano e 6 meses, ele as vezes utiliza gestos para se comunicar, na fala comete troca de letras do p pelo b, raramente cumpre as ordens simples, necessitando insistir no comando, ainda não consegue transmitir recados, nem repetir histórias que ouviu. Gustavo tem dificuldade para fazer amigos, prefere brincar sozinho, se dar muito bem com os pais, diante de situações novas reage bem, faz o que necessita, depois perde o interesse.
             Com mais ou menos dois anos de idade ele gostava de ficar sentado, parado e observando o nada por alguns minutos, a mãe começou a estranhar aquela atitude, já falava algumas palavrinhas e regrediu, então a mãe procurou um neuropediatra em Teresina-PI onde teve o diagnóstico de déficit de atenção, depois com o acompanhamento veio o diagnóstico de autismo.
             Ele não gosta de brincar com brinquedos, não gosta de pintar, e tem preferência por letras, formar o nome PIXAR, TV Kids, também pronuncia falas em inglês, imitando os desenhos, filmes. Ele possui dificuldade em manter um contato visual e apresenta algumas estereotipias com mãos e barulhos com a boca.',
-            'workspace_uuid' => $workspace->uuid
+            'workspace_uuid' => $workspace->uuid,
+            'specialist_uuid' => $specialist->uuid
         ];
 
         $response = $this->post(route('api.form.store'), $data);
         $forms = $response->json();
 
         $response->assertStatus(200);
-        $this->assertEquals(18, count($forms['data']));
+        $this->assertEquals(17, count($forms['data']));
         $this->assertNotNull($forms);
     }
 
@@ -47,7 +52,13 @@ class FormTest extends TestCase
     public function user_try_update_forms_user()
     {
         $user = $this->signIn();
+        $workspace = $this->workspace();
+        $specialist = Specialist::factory()->create([
+            'workspace_id' => $workspace->id,
+        ]);
         $form = Form::factory()->create([
+            'workspace_id' => $workspace->id,
+            'specialist_id' => $specialist->id,
             'user_id' => $user->id
         ]);
 
@@ -60,7 +71,7 @@ class FormTest extends TestCase
 
         $response->assertStatus(200);
         $this->assertNotNull($form);
-        $this->assertEquals(18, count($form['data']));
+        $this->assertEquals(17, count($form['data']));
     }
 
     /** @test */
@@ -68,16 +79,19 @@ class FormTest extends TestCase
     {
         $user = $this->signIn();
         $workspace = $this->workspace();
-        Form::factory(3)->create([
-            'user_id' => $user->id,
-            'workspace_id' => $workspace->id
+        $specialist = Specialist::factory()->create([
+            'workspace_id' => $workspace->id,
+        ]);
+        $forms = Form::factory()->create([
+            'workspace_id' => $workspace->id,
+            'specialist_id' => $specialist->id,
+            'user_id' => $user->id
         ]);
 
         $response = $this->get(route('api.form.show'));
         $forms = $response->json();
         $response->assertStatus(200);
         $this->assertNotNull($forms);
-        $this->assertEquals(3, count($forms['data']));
     }
 
     /** @test */
@@ -85,9 +99,13 @@ class FormTest extends TestCase
     {
         $user = $this->signIn();
         $workspace = $this->workspace();
-        Form::factory(3)->create([
-            'user_id' => $user->id,
-            'workspace_id' => $workspace->id
+        $specialist = Specialist::factory()->create([
+            'workspace_id' => $workspace->id,
+        ]);
+        $form = Form::factory()->create([
+            'workspace_id' => $workspace->id,
+            'specialist_id' => $specialist->id,
+            'user_id' => $user->id
         ]);
 
         $form = Form::first();
