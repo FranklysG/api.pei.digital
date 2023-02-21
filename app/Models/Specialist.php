@@ -33,4 +33,10 @@ class Specialist extends Model
         'workspace_id'
     ];
 
+    public function forms()
+    {
+        return $this->hasMany(Form::class);
+    }
+
+
 }

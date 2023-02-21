@@ -18,8 +18,8 @@ class SpecialistFactory extends Factory
     public function definition()
     {
         return [
-            'name' => $this->faker->firstName(),
-            'area' => 'Medical - '.$this->faker->jobTitle(),
+            'name' => $this->faker->name(),
+            'area' => 'Medical '.$this->faker->jobTitle(),
             'residence' => $this->faker->country().' - '.$this->faker->countryCode(),
         ];
     }

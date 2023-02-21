@@ -43,16 +43,22 @@ class Form extends Model
     protected $hidden = [
         'id',
         'user',
+        'specialist',
         'workspace_id',
         'specialist_id',
         'user_id'
     ];
 
-    protected $appends = ['author'];
+    protected $appends = ['author', 'medical'];
 
     public function workspace()
     {
         return $this->hasOne(Workspace::class);
+    }
+
+    public function specialist()
+    {
+        return $this->belongsTo(Specialist::class);
     }
 
     public function user()
@@ -63,5 +69,11 @@ class Form extends Model
     public function getAuthorAttribute()
     {
         return $this->user?->name;
+    }
+
+    public function getMedicalAttribute()
+    {
+        $specialist = $this->specialist;
+        return $specialist?->name.' - '.$specialist?->area.' - '.$specialist?->residence;
     }
 }
