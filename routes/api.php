@@ -34,7 +34,7 @@ Route::middleware(['auth:sanctum'])->group(function () {
     Route::post('/setting', [SettingController::class, 'store'])->name('api.setting.store');
     Route::put('/setting', [SettingController::class, 'update'])->name('api.setting.update');
     
-    Route::get('/forms/generate', [GenerateController::class, 'show'])->name('api.form.generate.show');
+    Route::get('/form/generate', [GenerateController::class, 'show'])->name('api.form.generate.show');
     
     Route::get('/form', [FormController::class, 'show'])->name('api.form.show');
     Route::post('/form', [FormController::class, 'store'])->name('api.form.store');
