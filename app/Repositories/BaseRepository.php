@@ -55,6 +55,13 @@ class BaseRepository
         return $workspace;
     }
 
+    public function getUsersByWorkspaceId() {
+        $user = Auth::user();
+        $userWorkspace = UserWorkspace::where('user_id', $user->id)->first();
+        $users = UserWorkspace::where('workspace_id', $userWorkspace->workspace_id, )->whereNotIn('user_id', [$user->id])->get();
+        return $users;
+    }
+
     public function getByUuid($uuid, $relationships = [])
     {
         if ($relationships) {
