@@ -64,7 +64,7 @@ class UserTest extends TestCase
         $users = $response->json();
         $response->assertStatus(200);
         $this->assertNotNull($users);
-        $this->assertEquals(5, count($users['data'][0]));
+        $this->assertEquals(8, count($users['data'][0]));
     }
 
     /** @test */

@@ -26,11 +26,11 @@ class UserWorkspace extends Model
      */
     protected $hidden = [];
 
-    public function user(){
+    public function users(){
         return $this->hasMany(User::class);
     }
 
-    public function workspace(){
+    public function workspaces(){
         return $this->hasMany(Workspace::class);
     }
 

@@ -14,7 +14,9 @@
 
 namespace App\Repositories;
 
+use App\Models\User;
 use App\Models\UserWorkspace;
+use App\Models\Workspace;
 use Illuminate\Support\Facades\Auth;
 
 class BaseRepository
@@ -58,8 +60,12 @@ class BaseRepository
     public function getUsersByWorkspaceId() {
         $user = Auth::user();
         $userWorkspace = UserWorkspace::where('user_id', $user->id)->first();
-        $users = UserWorkspace::where('workspace_id', $userWorkspace->workspace_id, )->whereNotIn('user_id', [$user->id])->get();
-        return $users;
+        $workspaces = UserWorkspace::where('workspace_id', $userWorkspace->workspace_id, )->whereNotIn('user_id', [$user->id])->get();
+        $ids = [];
+        foreach($workspaces as $user){
+            $ids[] = $user->user_id ;
+        }
+        return User::whereIn('id', $ids)->get();
     }
 
     public function getByUuid($uuid, $relationships = [])
