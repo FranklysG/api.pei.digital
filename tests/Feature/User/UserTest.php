@@ -17,11 +17,12 @@ class UserTest extends TestCase
     /** @test */
     public function user_try_create_user()
     {
-        $this->signIn();
+        $workspace = $this->workspace();
         $data = [
             'name' => 'Dr. Claudio Duarte',
             'password' => 'password',
-            'email' => 'caludio.duarte@pei.com'
+            'email' => 'caludio.duarte@pei.com',
+            'workspace_uuid' => $workspace->uuid
         ];
 
         $response = $this->post(route('api.user.store'), $data);
@@ -54,7 +55,7 @@ class UserTest extends TestCase
     {
         $workspace = $this->workspace();
         $users = User::factory(3)->create();
-        foreach($users as $user) {
+        foreach ($users as $user) {
             UserWorkspace::factory()->create([
                 'workspace_id' => $workspace->id,
                 'user_id' => $user->id

@@ -24,6 +24,7 @@ class StoreRequest extends FormRequest
     public function rules()
     {
         return [
+            'workspace_uuid' => 'string|required',
             'name' => 'string|required',
             'password' => 'string|required',
             'email' => 'string|required'

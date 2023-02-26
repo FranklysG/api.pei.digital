@@ -22,14 +22,14 @@ class UserWorkspaceSeeder extends Seeder
     {
         UserWorkspace::create([
             'user_id' => 1,
-            'workspace_id' => 2
-        ]);
-        UserWorkspace::create([
-            'user_id' => 2,
             'workspace_id' => 1
         ]);
         UserWorkspace::create([
             'user_id' => 3,
+            'workspace_id' => 1
+        ]);
+        UserWorkspace::create([
+            'user_id' => 2,
             'workspace_id' => 2
         ]);
         UserWorkspace::create([

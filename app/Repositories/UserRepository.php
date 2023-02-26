@@ -15,20 +15,29 @@
 namespace App\Repositories;
 
 use App\Models\User;
+use App\Models\UserWorkspace;
 use App\Models\Workspace;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 
-class UserRepository extends BaseRepository{
+class UserRepository extends BaseRepository
+{
 
-    public function __construct(){
+    public function __construct()
+    {
         parent::__construct(User::class);
     }
 
-    public function create($data){
+    public function create($data)
+    {
+        $workspace = Workspace::where('uuid', $data['workspace_uuid'])->first();
         $data['password'] = Hash::make($data['password']);
         $model = $this->model->create($data);
+        UserWorkspace::create([
+            'user_id' => $model->id,
+            'workspace_id' => $workspace->id
+        ]);
         return $model->fresh();
     }
 
@@ -48,6 +57,7 @@ class UserRepository extends BaseRepository{
     {
         try {
             $user = $this->getByUuid($uuid);
+            UserWorkspace::where('user_id', $user->id)->delete();
             $user->delete();
         } catch (\Throwable $th) {
             return false;
@@ -56,7 +66,8 @@ class UserRepository extends BaseRepository{
         return $user;
     }
 
-    public function getUserByWorkspaceId() {
+    public function getUserByWorkspaceId()
+    {
         $users = $this->getUsersByWorkspaceId();
         return $users;
     }

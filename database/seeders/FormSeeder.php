@@ -19,7 +19,7 @@ class FormSeeder extends Seeder
     {
         Form::factory(3)->create([
             'workspace_id' => 1,
-            'user_id' => 1,
+            'user_id' => 3,
             'specialist_id' => 1,
             'type' => 'processing',
             'status' => 'Processando',
@@ -36,6 +36,14 @@ class FormSeeder extends Seeder
         Form::factory(2)->create([
             'workspace_id' => 2,
             'user_id' => 2,
+            'specialist_id' => 1,
+            'type' => 'failed',
+            'status' => 'Recusado',
+            'date' => date('M d, Y')
+        ]);
+        Form::factory(3)->create([
+            'workspace_id' => 2,
+            'user_id' => 4,
             'specialist_id' => 1,
             'type' => 'failed',
             'status' => 'Recusado',
