@@ -88,6 +88,6 @@ class Form extends Model
 
     public function getSkillsAttribute()
     {
-        return $this->skills()->get()->pluck('uuid');
+        return $this->skills()->get(['uuid', 'type', 'title']);
     }
 }
