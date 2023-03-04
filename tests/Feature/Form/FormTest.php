@@ -144,12 +144,25 @@ class FormTest extends TestCase
              Ele não gosta de brincar com brinquedos, não gosta de pintar, e tem preferência por letras, formar o nome PIXAR, TV Kids, também pronuncia falas em inglês, imitando os desenhos, filmes. Ele possui dificuldade em manter um contato visual e apresenta algumas estereotipias com mãos e barulhos com a boca.',
             'workspace_uuid' => $workspace->uuid,
             'specialist_uuid' => $specialist->uuid,
-            'skill_uuids' => [
-                $skills[3]['uuid'],
-                $skills[7]['uuid'],
-                $skills[23]['uuid'],
-                $skills[54]['uuid'],
-                $skills[14]['uuid'],
+            'skills' => [
+                [
+                    'uuid' => $skills[3]['uuid'],
+                    'helper' => 'Trabalhar em duplas ou grupo'
+                ],
+                [
+                    'uuid' => $skills[23]['uuid'],
+                    'helper' => 'Melhorar as habilidades de atenção,
+                    concentração, memória, percepção visual'
+                ],
+                [
+                    'uuid' => $skills[12]['uuid'],
+                    'helper' => 'Trabalhar em duplas ou grupo'
+                ],
+                [
+                    'uuid' => $skills[7]['uuid'],
+                    'helper' => 'Desenvolver a imaginação e
+                    criatividade'
+                ]
             ]
         ];
 

@@ -40,11 +40,17 @@ class FormRepository extends BaseRepository
             'specialist_id' => $specialist->id
         ]);
 
-        $model = $this->model->create($data);
-        if (!empty($data['skill_uuids'])) {
-            $skills = Skill::whereIn('uuid', $data['skill_uuids'])->get('id');
-            $model->skills()->attach($skills);
+        if (!empty($data['skills'])) {
+            $ids = [];
+            foreach($data['skills'] as $value){
+                $ids[] = $value['uuid'];
+            }
+            
+            $skills = Skill::whereIn('uuid', $ids)->get('id');
+            dd($skills);
+            // $model->skills()->attach($skills);
         }
+        $model = $this->model->create($data);
         
         return $model->fresh();
     }

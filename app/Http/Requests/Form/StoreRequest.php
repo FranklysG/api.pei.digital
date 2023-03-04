@@ -38,7 +38,12 @@ class StoreRequest extends FormRequest
             'description' => 'string|required',
             'workspace_uuid' => 'string|required',
             'specialist_uuid' => 'string|required',
-            'skill_uuids' => 'array'
+            'skills' => [
+                [
+                    'uuid' => 'string|required',
+                    'helper' => 'string'
+                ]
+            ]
         ];
     }
 }

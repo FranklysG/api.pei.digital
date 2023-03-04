@@ -66,7 +66,8 @@ class Form extends Model
         return $this->belongsTo(User::class);
     }
 
-    public function skills(){
+    public function skills()
+    {
         return $this->belongsToMany(Skill::class, 'form_skills');
     }
 
@@ -78,7 +79,7 @@ class Form extends Model
     public function getMedicalAttribute()
     {
         $specialist = $this->specialist;
-        return $specialist?->name.' - '.$specialist?->area.' - '.$specialist?->residence;
+        return $specialist?->name . ' - ' . $specialist?->area . ' - ' . $specialist?->residence;
     }
 
     public function getMedicalUuidAttribute()
@@ -88,6 +89,13 @@ class Form extends Model
 
     public function getSkillsAttribute()
     {
-        return $this->skills()->get(['uuid', 'type', 'title']);
+        $skills = $this->skills()->get();
+        $order = [];
+        foreach ($skills as $value) {
+            $formSkills = FormSkills::where('form_id', $this->id)->where('skill_id', $value['id'])->first();
+            $order[$value['slug']][] = ['title' => $value['title'], 'helper' =>  $formSkills->helper];
+        }
+
+        return $order;
     }
 }
