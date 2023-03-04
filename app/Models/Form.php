@@ -49,7 +49,7 @@ class Form extends Model
         'user_id'
     ];
 
-    protected $appends = ['author', 'medical', 'medical_uuid'];
+    protected $appends = ['author', 'medical', 'medical_uuid', 'skills'];
 
     public function workspace()
     {
@@ -84,5 +84,10 @@ class Form extends Model
     public function getMedicalUuidAttribute()
     {
         return $this->specialist?->uuid;
+    }
+
+    public function getSkillsAttribute()
+    {
+        return $this->skills()->get()->pluck('uuid');
     }
 }

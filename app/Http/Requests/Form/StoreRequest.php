@@ -37,7 +37,8 @@ class StoreRequest extends FormRequest
             'especialist' => 'string|required',
             'description' => 'string|required',
             'workspace_uuid' => 'string|required',
-            'specialist_uuid' => 'string|required'
+            'specialist_uuid' => 'string|required',
+            'skill_uuids' => 'array'
         ];
     }
 }

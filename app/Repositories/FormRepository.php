@@ -15,27 +15,37 @@
 namespace App\Repositories;
 
 use App\Models\Form;
+use App\Models\Skill;
 use App\Models\Specialist;
 use App\Models\Workspace;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Illuminate\Support\Facades\Auth;
 
-class FormRepository extends BaseRepository{
+class FormRepository extends BaseRepository
+{
 
-    public function __construct(){
+    public function __construct()
+    {
         parent::__construct(Form::class);
     }
 
-    public function create($data){
+    public function create($data)
+    {
         $workspace = Workspace::where('uuid', $data['workspace_uuid'])->first();
         $specialist = Specialist::where('uuid', $data['specialist_uuid'])->first();
+
         $data = array_merge($data, [
             'user_id' => Auth::user()->id,
             'workspace_id' => $workspace->id,
-            'specialist_id' => $specialist->id 
+            'specialist_id' => $specialist->id
         ]);
-        
+
         $model = $this->model->create($data);
+        if (!empty($data['skill_uuids'])) {
+            $skills = Skill::whereIn('uuid', $data['skill_uuids'])->get('id');
+            $model->skills()->attach($skills);
+        }
+        
         return $model->fresh();
     }
 
@@ -57,7 +67,8 @@ class FormRepository extends BaseRepository{
         return $form->delete();
     }
 
-    public function getFormByWorkspaceId() {
+    public function getFormByWorkspaceId()
+    {
         $userWorkspace = $this->getWorkspaceByUserId();
         $forms = Form::where('workspace_id', $userWorkspace->workspace_id)->get();
         return $forms;
