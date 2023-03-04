@@ -20,5 +20,6 @@ class DatabaseSeeder extends Seeder
         $this->call(SettingSeeder::class);
         $this->call(SpecialistSeeder::class);
         $this->call(FormSeeder::class);
+        $this->call(SkillSeeder::class);
     }
 }

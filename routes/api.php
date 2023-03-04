@@ -3,6 +3,7 @@
 use App\Http\Controllers\Form\FormController;
 use App\Http\Controllers\Generate\GenerateController;
 use App\Http\Controllers\Setting\SettingController;
+use App\Http\Controllers\Skill\SkillController;
 use App\Http\Controllers\Specialist\SpecialistController;
 use App\Http\Controllers\User\UserController;
 use App\Http\Controllers\Workspace\WorkspaceController;
@@ -46,9 +47,11 @@ Route::middleware(['auth:sanctum'])->group(function () {
     Route::post('/specialist', [SpecialistController::class, 'store'])->name('api.specialist.store');
     Route::put('/specialist', [SpecialistController::class, 'update'])->name('api.specialist.update');
     Route::delete('/specialist', [SpecialistController::class, 'destroy'])->name('api.specialist.destroy');
-
+    
     Route::get('/users', [UserController::class, 'show'])->name('api.user.show');
     Route::post('/user', [UserController::class, 'store'])->name('api.user.store');
     Route::put('/user', [UserController::class, 'update'])->name('api.user.update');
     Route::delete('/user', [UserController::class, 'destroy'])->name('api.user.destroy');
+    
+    Route::get('/skill', [SkillController::class, 'show'])->name('api.skill.show');
 });
