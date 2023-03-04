@@ -15,6 +15,7 @@
 namespace App\Repositories;
 
 use App\Models\Form;
+use App\Models\FormSkills;
 use App\Models\Skill;
 use App\Models\Specialist;
 use App\Models\Workspace;
@@ -40,17 +41,24 @@ class FormRepository extends BaseRepository
             'specialist_id' => $specialist->id
         ]);
 
+        $model = $this->model->create($data);
+
         if (!empty($data['skills'])) {
-            $ids = [];
+            
+            $skill_ids = [];
             foreach($data['skills'] as $value){
-                $ids[] = $value['uuid'];
+                $skill_ids[] = $value['uuid'];
             }
             
-            $skills = Skill::whereIn('uuid', $ids)->get('id');
-            dd($skills);
-            // $model->skills()->attach($skills);
+            $skills = Skill::whereIn('uuid', $skill_ids)->get('id');
+            $model->skills()->attach($skills);
+            
+            foreach($data['skills'] as $value){
+                $skillId = Skill::where('uuid', $value['uuid'])->first()->id;
+                FormSkills::where('form_id', $model->id)->where('skill_id', $skillId)->update(['helper' => $value['helper']]);
+            }
+
         }
-        $model = $this->model->create($data);
         
         return $model->fresh();
     }

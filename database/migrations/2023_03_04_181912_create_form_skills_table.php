@@ -17,7 +17,7 @@ return new class extends Migration
             $table->id();
             $table->foreignId('form_id')->constrained();
             $table->foreignId('skill_id')->constrained();
-            $table->string('helper');
+            $table->string('helper')->nullable();
             $table->timestamps();
         });
     }
