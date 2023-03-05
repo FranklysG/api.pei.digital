@@ -5,6 +5,7 @@ use App\Http\Controllers\Generate\GenerateController;
 use App\Http\Controllers\Setting\SettingController;
 use App\Http\Controllers\Skill\SkillController;
 use App\Http\Controllers\Specialist\SpecialistController;
+use App\Http\Controllers\Specialty\SpecialtyController;
 use App\Http\Controllers\User\UserController;
 use App\Http\Controllers\Workspace\WorkspaceController;
 use Illuminate\Http\Request;

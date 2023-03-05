@@ -43,6 +43,16 @@ class StoreRequest extends FormRequest
                     'uuid' => 'string|required',
                     'helper' => 'string'
                 ]
+            ],
+            'specialtys' => [
+                [
+                    'name' => 'string',
+                    'location' => 'string',
+                    'professional' => 'string',
+                    'day' => 'string',
+                    'hour' => 'string',
+                    'contact' => 'string'
+                ]
             ]
         ];
     }

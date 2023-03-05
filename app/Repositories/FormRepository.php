@@ -18,6 +18,7 @@ use App\Models\Form;
 use App\Models\FormSkills;
 use App\Models\Skill;
 use App\Models\Specialist;
+use App\Models\Specialty;
 use App\Models\Workspace;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Illuminate\Support\Facades\Auth;
@@ -44,22 +45,32 @@ class FormRepository extends BaseRepository
         $model = $this->model->create($data);
 
         if (!empty($data['skills'])) {
-            
+
             $skill_ids = [];
-            foreach($data['skills'] as $value){
+            foreach ($data['skills'] as $value) {
                 $skill_ids[] = $value['uuid'];
             }
-            
+
             $skills = Skill::whereIn('uuid', $skill_ids)->get('id');
             $model->skills()->attach($skills);
-            
-            foreach($data['skills'] as $value){
+
+            foreach ($data['skills'] as $value) {
                 $skillId = Skill::where('uuid', $value['uuid'])->first()->id;
                 FormSkills::where('form_id', $model->id)->where('skill_id', $skillId)->update(['helper' => $value['helper']]);
             }
+        }
+
+        if (!empty($data['specialtys'])) {
+            $specialtys = array_shift($data['specialtys']);
+            
+            foreach ($specialtys as $value) {
+                Specialty::create(array_merge($value, [
+                    'form_id' => $model->id
+                ]));
+            }            
 
         }
-        
+
         return $model->fresh();
     }
 
