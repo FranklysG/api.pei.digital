@@ -49,7 +49,7 @@ class Form extends Model
         'user_id'
     ];
 
-    protected $appends = ['author', 'medical', 'medical_uuid', 'skills'];
+    protected $appends = ['author', 'medical', 'medical_uuid', 'skills', 'goals', 'specialty'];
 
     public function workspace()
     {
@@ -69,6 +69,16 @@ class Form extends Model
     public function skills()
     {
         return $this->belongsToMany(Skill::class, 'form_skills');
+    }
+
+    public function goals()
+    {
+        return $this->hasMany(Goals::class);
+    }
+
+    public function specialty()
+    {
+        return $this->hasMany(Specialty::class);
     }
 
     public function getAuthorAttribute()
@@ -97,5 +107,21 @@ class Form extends Model
         }
 
         return $order;
+    }
+
+    public function getGoalsAttribute()
+    {
+        $goals = $this->goals()->get();
+        $order = [];
+        foreach ($goals as $value) {
+            $order[$value['slug']][] = $value;
+        }
+        return $order;
+    }
+
+    public function getSpecialtyAttribute()
+    {
+        $specialty = $this->specialty()->get();
+        return $specialty;
     }
 }

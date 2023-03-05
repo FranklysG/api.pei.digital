@@ -34,6 +34,14 @@ class Specialty extends Model
      */
     protected $hidden = [
         'id',
+        'form_id',
+        'created_at',
+        'updated_at'
     ];
+
+    public function form()
+    {
+        return $this->belongsTo(Form::class);
+    }
 
 }

@@ -35,10 +35,21 @@ class Goals extends Model
      */
     protected $hidden = [
         'id',
+        'type',
+        'form_id',
+        'created_at',
+        'updated_at'
     ];
+
+    protected $appends = ['slug'];
 
     public function getSlugAttribute()
     {
         return Str::slug($this->type);
+    }
+
+    public function form()
+    {
+        return $this->belongsTo(Form::class);
     }
 }
