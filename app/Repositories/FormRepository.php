@@ -16,6 +16,7 @@ namespace App\Repositories;
 
 use App\Models\Form;
 use App\Models\FormSkills;
+use App\Models\Goals;
 use App\Models\Skill;
 use App\Models\Specialist;
 use App\Models\Specialty;
@@ -65,6 +66,17 @@ class FormRepository extends BaseRepository
             
             foreach ($specialtys as $value) {
                 Specialty::create(array_merge($value, [
+                    'form_id' => $model->id
+                ]));
+            }            
+
+        }
+
+        if (!empty($data['goals'])) {
+            $goals = array_shift($data['goals']);
+            
+            foreach ($goals as $value) {
+                Goals::create(array_merge($value, [
                     'form_id' => $model->id
                 ]));
             }            

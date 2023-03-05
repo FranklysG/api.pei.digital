@@ -53,6 +53,15 @@ class StoreRequest extends FormRequest
                     'hour' => 'string',
                     'contact' => 'string'
                 ]
+            ],
+            'goals' => [
+                [
+                    'goal' => 'string',
+                    'period' => 'string',
+                    'perfomance' => 'string',
+                    'strategy' => 'string',
+                    'resource' => 'string'
+                ]
             ]
         ];
     }
