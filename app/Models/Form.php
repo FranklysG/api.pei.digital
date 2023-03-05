@@ -103,7 +103,7 @@ class Form extends Model
         $order = [];
         foreach ($skills as $value) {
             $formSkills = FormSkills::where('form_id', $this->id)->where('skill_id', $value['id'])->first();
-            $order[$value['slug']][] = ['title' => $value['title'], 'helper' =>  $formSkills->helper];
+            $order[$value['type']][] = ['title' => $value['title'], 'helper' =>  $formSkills->helper];
         }
 
         return $order;
@@ -114,7 +114,7 @@ class Form extends Model
         $goals = $this->goals()->get();
         $order = [];
         foreach ($goals as $value) {
-            $order[$value['slug']][] = $value;
+            $order[$value['type']][] = $value;
         }
         return $order;
     }
