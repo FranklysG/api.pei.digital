@@ -49,7 +49,7 @@ class Form extends Model
         'user_id'
     ];
 
-    protected $appends = ['author', 'medical', 'medical_uuid', 'skills', 'goals', 'specialty'];
+    protected $appends = ['author', 'medical', 'medical_uuid', 'skills', 'goals', 'specialtys'];
 
     public function workspace()
     {
@@ -119,7 +119,7 @@ class Form extends Model
         return $order;
     }
 
-    public function getSpecialtyAttribute()
+    public function getSpecialtysAttribute()
     {
         $specialty = $this->specialty()->get();
         return $specialty;
