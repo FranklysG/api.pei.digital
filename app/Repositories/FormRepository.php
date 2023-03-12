@@ -89,13 +89,55 @@ class FormRepository extends BaseRepository
     public function update($uuid, $data)
     {
         try {
-            $form = $this->getByUuid($uuid);
+            $model = $this->getByUuid($uuid);
         } catch (ModelNotFoundException $exception) {
             return false;
         }
 
-        $form->update($data);
-        return $form->fresh();
+        if (!empty($data['skills'])) {
+            
+            FormSkills::where('form_id', $model->id)->delete();
+            $skill_ids = [];
+            foreach ($data['skills'] as $value) {
+                $skill_ids[] = $value['uuid'];
+            }
+
+            $skills = Skill::whereIn('uuid', $skill_ids)->get('id');
+            $model->skills()->attach($skills);
+
+            foreach ($data['skills'] as $value) {
+                $skillId = Skill::where('uuid', $value['uuid'])->first()->id;
+                FormSkills::where('form_id', $model->id)->where('skill_id', $skillId)->update(['helper' => $value['helper']]);
+            }
+        }
+
+        if (!empty($data['specialtys'])) {
+            Specialty::where('form_id', $model->id)->delete();
+            $specialtys = array_shift($data['specialtys']);
+            
+            foreach ($specialtys as $value) {
+                Specialty::create(array_merge($value, [
+                    'form_id' => $model->id
+                ]));
+            }            
+
+        }
+        
+
+        if (!empty($data['goals'])) {
+            Goals::where('form_id', $model->id)->delete();
+            $goals = array_shift($data['goals']);
+            
+            foreach ($goals as $value) {
+                Goals::create(array_merge($value, [
+                    'form_id' => $model->id
+                ]));
+            }            
+
+        }
+
+        $model->update($data);
+        return $model->fresh();
     }
 
     public function delete($uuid)
