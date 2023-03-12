@@ -63,24 +63,22 @@ class FormRepository extends BaseRepository
 
         if (!empty($data['specialtys'])) {
             $specialtys = array_shift($data['specialtys']);
-            
+
             foreach ($specialtys as $value) {
                 Specialty::create(array_merge($value, [
                     'form_id' => $model->id
                 ]));
-            }            
-
+            }
         }
 
         if (!empty($data['goals'])) {
             $goals = array_shift($data['goals']);
-            
+
             foreach ($goals as $value) {
                 Goals::create(array_merge($value, [
                     'form_id' => $model->id
                 ]));
-            }            
-
+            }
         }
 
         return $model->fresh();
@@ -95,7 +93,7 @@ class FormRepository extends BaseRepository
         }
 
         if (!empty($data['skills'])) {
-            
+
             FormSkills::where('form_id', $model->id)->delete();
             $skill_ids = [];
             foreach ($data['skills'] as $value) {
@@ -114,26 +112,24 @@ class FormRepository extends BaseRepository
         if (!empty($data['specialtys'])) {
             Specialty::where('form_id', $model->id)->delete();
             $specialtys = array_shift($data['specialtys']);
-            
+
             foreach ($specialtys as $value) {
                 Specialty::create(array_merge($value, [
                     'form_id' => $model->id
                 ]));
-            }            
-
+            }
         }
-        
+
 
         if (!empty($data['goals'])) {
             Goals::where('form_id', $model->id)->delete();
             $goals = array_shift($data['goals']);
-            
+
             foreach ($goals as $value) {
                 Goals::create(array_merge($value, [
                     'form_id' => $model->id
                 ]));
-            }            
-
+            }
         }
 
         $model->update($data);
@@ -142,8 +138,11 @@ class FormRepository extends BaseRepository
 
     public function delete($uuid)
     {
-        $form = $this->getByUuid($uuid);
-        return $form->delete();
+        $model = $this->getByUuid($uuid);
+        FormSkills::where('form_id', $model->id)->delete();
+        Goals::where('form_id', $model->id)->delete();
+        Specialty::where('form_id', $model->id)->delete();
+        return $model->delete();
     }
 
     public function getFormByWorkspaceId()
