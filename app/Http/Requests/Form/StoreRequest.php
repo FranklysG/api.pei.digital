@@ -34,7 +34,6 @@ class StoreRequest extends FormRequest
             'father' => 'string|required',
             'mother' => 'string|required',
             'diagnostic' => 'string|required',
-            'especialist' => 'string|required',
             'description' => 'string|required',
             'workspace_uuid' => 'string|required',
             'specialist_uuid' => 'string|required',
