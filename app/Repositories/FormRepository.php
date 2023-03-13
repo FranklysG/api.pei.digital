@@ -62,7 +62,7 @@ class FormRepository extends BaseRepository
         }
 
         if (!empty($data['specialtys'])) {
-            $specialtys = array_shift($data['specialtys']);
+            $specialtys = $data['specialtys'];
 
             foreach ($specialtys as $value) {
                 Specialty::create(array_merge($value, [
@@ -72,7 +72,7 @@ class FormRepository extends BaseRepository
         }
 
         if (!empty($data['goals'])) {
-            $goals = array_shift($data['goals']);
+            $goals = $data['goals'];
 
             foreach ($goals as $value) {
                 Goals::create(array_merge($value, [
