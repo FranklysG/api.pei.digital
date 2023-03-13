@@ -1,0 +1,48 @@
+service: laravel-starter-serverless
+
+provider:
+  name: aws
+  region: us-east-1
+  runtime: provided.al2
+  apiGateway:
+    binaryMediaTypes:
+      - "*/*"
+  iam:
+    role:
+      statements:
+        # Allow to put a file in the `my-bucket` S3 bucket
+        - Effect: Allow
+          Action:
+            - s3:PutObject
+            - s3:PutObjectAcl
+            - s3:GetObject
+            - s3:GetObjectAcl
+            - s3:DeleteObject
+          Resource: "arn:aws:s3:::produtoperto/*"
+
+plugins:
+  - ./vendor/bref/bref
+
+package:
+  patterns:
+    - '!node_modules/**'
+    - '!public/storage'
+    - '!resources/assets/**'
+    - '!storage/**'
+    - '!tests/**'
+
+functions:
+  website:
+    handler: public/index.php
+    timeout: 28 # in seconds (API Gateway has a timeout of 29 seconds)
+    layers:
+      - ${bref:layer.php-81-fpm}
+    events:
+      - http: "ANY /"
+      - http: "ANY /{proxy+}"
+  artisan:
+    handler: artisan
+    timeout: 120 # in seconds
+    layers:
+      - ${bref:layer.php-81} # PHP
+      - ${bref:layer.console} # The "console" layer
