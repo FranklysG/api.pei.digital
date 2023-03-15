@@ -21,12 +21,11 @@ class AuthenticatedSessionController extends Controller
     {
         $request->authenticate();
 
-        $user = Auth::user();
-        $response = User::find($user->id);
-        $response->token = $response->createToken('auth_token')->plainTextToken;
+        $user = User::find(Auth::user()->id);
+        $user->token = $user->createToken('auth_token')->plainTextToken;
 
-        if ($response) {
-            return $this->apiResponse->successResponse('Usuario autenticado :)', $response->toArray());
+        if ($user) {
+            return $this->apiResponse->successResponse('Usuario autenticado :)', $user->toArray());
         } else {
             return $this->apiResponse->errorResponse('Wrong error', []);
         }
