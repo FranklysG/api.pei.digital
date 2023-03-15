@@ -152,8 +152,7 @@ class FormTest extends TestCase
                 ],
                 [
                     'uuid' => $skills[23]['uuid'],
-                    'helper' => 'Melhorar as habilidades de atenção,
-                    concentração, memória, percepção visual'
+                    'helper' => 'Melhorar as habilidades de atenção, concentração, memória, percepção visual'
                 ],
                 [
                     'uuid' => $skills[12]['uuid'],
@@ -161,8 +160,7 @@ class FormTest extends TestCase
                 ],
                 [
                     'uuid' => $skills[7]['uuid'],
-                    'helper' => 'Desenvolver a imaginação e
-                    criatividade'
+                    'helper' => 'Desenvolver a imaginação e criatividade'
                 ]
             ]
         ];
@@ -214,22 +212,20 @@ class FormTest extends TestCase
             ],
             'specialtys' => [
                 [
-                    [
-                        'name' => 'Fonoaldiologa',
-                        'location' => 'APAE',
-                        'professional' => 'Alexandro Mendes',
-                        'day' => '2° Feira',
-                        'hour' => 'Manha',
-                        'contact' => ' (99) 98746-2343'
-                    ],
-                    [
-                        'name' => 'Psicopedagoga',
-                        'location' => 'APAE',
-                        'professional' => 'Morena da calçada',
-                        'day' => '2° Feira',
-                        'hour' => 'Manha',
-                        'contact' => ' (99) 98746-2343'
-                    ]
+                    'name' => 'Fonoaldiologa',
+                    'location' => 'APAE',
+                    'professional' => 'Alexandro Mendes',
+                    'day' => '2° Feira',
+                    'hour' => 'Manha',
+                    'contact' => ' (99) 98746-2343'
+                ],
+                [
+                    'name' => 'Psicopedagoga',
+                    'location' => 'APAE',
+                    'professional' => 'Morena da calçada',
+                    'day' => '2° Feira',
+                    'hour' => 'Manha',
+                    'contact' => ' (99) 98746-2343'
                 ]
             ]
         ];
@@ -281,37 +277,33 @@ class FormTest extends TestCase
             ],
             'specialtys' => [
                 [
-                    [
-                        'name' => 'Fonoaldiologa',
-                        'location' => 'APAE',
-                        'professional' => 'Alexandro Mendes',
-                        'day' => '2° Feira',
-                        'hour' => 'Manha',
-                        'contact' => ' (99) 98746-2343'
-                    ],
-                    [
-                        'name' => 'Psicopedagoga',
-                        'location' => 'APAE',
-                        'professional' => 'Morena da calçada',
-                        'day' => '2° Feira',
-                        'hour' => 'Manha',
-                        'contact' => ' (99) 98746-2343'
-                    ]
+                    'name' => 'Fonoaldiologa',
+                    'location' => 'APAE',
+                    'professional' => 'Alexandro Mendes',
+                    'day' => '2° Feira',
+                    'hour' => 'Manha',
+                    'contact' => ' (99) 98746-2343'
+                ],
+                [
+                    'name' => 'Psicopedagoga',
+                    'location' => 'APAE',
+                    'professional' => 'Morena da calçada',
+                    'day' => '2° Feira',
+                    'hour' => 'Manha',
+                    'contact' => ' (99) 98746-2343'
                 ]
             ],
             'goals' => [
                 [
-                    [
-                        'type' => 'Matematica',
-                        'goal' => 'Desenvolver habilidade de resolução de problemas',
-                        'period' => 'Segundo semestre',
-                        'perfomance' => 'Conta de 0 a 50
+                    'type' => 'Matematica',
+                    'goal' => 'Desenvolver habilidade de resolução de problemas',
+                    'period' => 'Segundo semestre',
+                    'perfomance' => 'Conta de 0 a 50
                         Resolve continhas simples de adição e subtração',
-                        'strategy' => '• Desenvolver sua capacidade de enteração com as outras crianças;
+                    'strategy' => '• Desenvolver sua capacidade de enteração com as outras crianças;
                         • Usar material concreto para compreender o que deve ser feito;
                         • Conversar sobre o enunciado para melhor compreensão;',
-                        'resource' => 'Tablet, jogos didáticos, material dourado, lápis de cor e atividades adaptadas;',
-                    ]
+                    'resource' => 'Tablet, jogos didáticos, material dourado, lápis de cor e atividades adaptadas;',
                 ]
             ]
         ];

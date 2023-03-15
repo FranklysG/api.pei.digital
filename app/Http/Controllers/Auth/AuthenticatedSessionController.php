@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Auth\LoginRequest;
+use App\Models\User;
 use App\Models\UserLoginLog;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -20,9 +21,15 @@ class AuthenticatedSessionController extends Controller
     {
         $request->authenticate();
 
-        $request->session()->regenerate();
+        $user = Auth::user();
+        $response = User::find($user->id);
+        $response->token = $response->createToken('auth_token')->plainTextToken;
 
-        return response()->noContent();
+        if ($response) {
+            return $this->apiResponse->successResponse('Usuario autenticado :)', $response->toArray());
+        } else {
+            return $this->apiResponse->errorResponse('Wrong error', []);
+        }
     }
 
     /**
