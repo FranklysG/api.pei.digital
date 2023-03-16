@@ -4,6 +4,7 @@ provider:
   name: aws
   region: us-east-1
   runtime: provided.al2
+  deploymentBucket: peidigitalub
   apiGateway:
     binaryMediaTypes:
       - "*/*"
@@ -18,7 +19,7 @@ provider:
             - s3:GetObject
             - s3:GetObjectAcl
             - s3:DeleteObject
-          Resource: "arn:aws:s3:::produtoperto/*"
+          Resource: "arn:aws:s3:::peidigitalub/*"
 
 plugins:
   - ./vendor/bref/bref
@@ -30,6 +31,7 @@ package:
     - '!resources/assets/**'
     - '!storage/**'
     - '!tests/**'
+    - '!docker/**'
 
 functions:
   website:
