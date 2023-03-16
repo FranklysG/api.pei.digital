@@ -18,9 +18,4 @@ Route::get('/', function () {
     return ['Laravel' => app()->version()];
 });
 
-Route::get('/', function () {
-    return view('forms');
-});
-Route::get('generate', [GenerateController::class, 'show'])->name('api.form.generate.show');
-
 require __DIR__ . '/auth.php';
