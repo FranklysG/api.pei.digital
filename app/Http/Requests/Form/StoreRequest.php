@@ -24,7 +24,6 @@ class StoreRequest extends FormRequest
     public function rules()
     {
         return [
-            'uuid', 'string',
             'title' => 'string|required',
             'name' => 'string|required',
             'year' => 'string|required',
@@ -39,7 +38,7 @@ class StoreRequest extends FormRequest
             'specialist_uuid' => 'string|required',
             'skills' => [
                 [
-                    'uuid' => 'string|required',
+                    'uuid' => 'string',
                     'helper' => 'string'
                 ]
             ],

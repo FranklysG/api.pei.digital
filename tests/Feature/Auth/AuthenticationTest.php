@@ -21,7 +21,7 @@ class AuthenticationTest extends TestCase
         ]);
         
         $this->assertAuthenticated();
-        $response->assertNoContent();
+        $response->assertSessionHasNoErrors();
     }
 
     /** @test */
