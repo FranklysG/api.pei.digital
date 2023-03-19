@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Generate\GenerateController;
+use App\Models\User;
 use Illuminate\Support\Facades\Route;
 
 /*
