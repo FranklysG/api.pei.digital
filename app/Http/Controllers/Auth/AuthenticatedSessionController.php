@@ -20,15 +20,18 @@ class AuthenticatedSessionController extends Controller
      */
     public function store(LoginRequest $request)
     {
-        $request->authenticate();
-
-        $user = User::find(Auth::user()->id);
-        $user->token = $user->createToken('auth_token')->plainTextToken;
-
+        $data = $request->validated();
+        $user = User::where('email', $data['email'])->first();
+        
         if ($user) {
+            $request->authenticate();
+
+            $user = User::find(Auth::user()->id);
+            $user->token = $user->createToken('auth_token')->plainTextToken;
+
             return $this->apiResponse->successResponse('Usuario autenticado :)', $user->toArray());
         } else {
-            return $this->apiResponse->errorResponse('Wrong error', []);
+            return $this->apiResponse->errorResponse('User Not Found', []);
         }
     }
 
