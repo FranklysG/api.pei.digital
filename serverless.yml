@@ -32,6 +32,8 @@ package:
     - '!storage/**'
     - '!tests/**'
     - '!docker/**'
+    - '!.env'
+    - '!.env.example'
 
 functions:
   website:
