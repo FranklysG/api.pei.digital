@@ -16,8 +16,8 @@ return new class extends Migration
         Schema::create('skills', function (Blueprint $table) {
             $table->id();
             $table->string('uuid')->unique();
-            $table->string('type');
-            $table->string('title');
+            $table->string('type')->nullable();
+            $table->string('title')->nullable();
             $table->timestamps();
         });
     }

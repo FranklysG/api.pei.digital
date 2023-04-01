@@ -17,11 +17,11 @@ return new class extends Migration
             $table->id();
             $table->foreignId('form_id')->constrained();
             $table->string('uuid')->unique();
-            $table->string('name');
-            $table->string('location');
+            $table->string('name')->nullable();
+            $table->string('location')->nullable();
             $table->string('professional')->nullable();
-            $table->string('day');
-            $table->string('hour');
+            $table->string('day')->nullable();
+            $table->string('hour')->nullable();
             $table->string('contact')->nullable();
             $table->timestamps();
         });

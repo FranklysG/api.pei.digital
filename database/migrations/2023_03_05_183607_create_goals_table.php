@@ -17,12 +17,12 @@ return new class extends Migration
             $table->id();
             $table->foreignId('form_id')->constrained();
             $table->string('uuid')->unique();
-            $table->string('type');
-            $table->string('goal');
-            $table->string('period');
-            $table->string('perfomance');
-            $table->string('strategy');
-            $table->string('resource');
+            $table->string('type')->nullable();
+            $table->string('goal')->nullable();
+            $table->string('period')->nullable();
+            $table->string('perfomance')->nullable();
+            $table->string('strategy')->nullable();
+            $table->string('resource')->nullable();
             $table->timestamps();
         });
     }
