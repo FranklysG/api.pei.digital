@@ -7,7 +7,9 @@ provider:
   deploymentBucket: peidigitalub
   apiGateway:
     binaryMediaTypes:
-      - "*/*"
+      - '*/*'
+    environment:
+      BREF_BINARY_RESPONSES: '1'
   iam:
     role:
       statements:
