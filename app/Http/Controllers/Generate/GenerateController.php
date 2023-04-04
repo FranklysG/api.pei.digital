@@ -20,6 +20,7 @@ class GenerateController extends Controller
     {
         $data = $request->validated();
         $uuid = $request->uuid;
+        
         $data = $repository->getByUuid($uuid);
         if($data){
             $pdf = PDF::loadView('forms', ['data' => $data]);
