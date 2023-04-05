@@ -24,7 +24,13 @@ class GenerateController extends Controller
         $data = $repository->getByUuid($uuid);
         if ($data) {
             $pdf = PDF::loadView('forms', ['data' => $data]);
-            return $pdf->download('pei-digital-form-' . time() . '.pdf');
+
+            $headers = [
+                'Content-Type' => 'application/pdf',
+                'Content-Disposition' => 'attachment; filename="' . 'pei-digital-form-' . time() . '.pdf' . '"',
+            ];
+
+            return $pdf->download('pei-digital-form-' . time() . '.pdf', $headers);
         } else {
             return $this->apiResponse->errorResponse('Formulario não encontrado :(', []);
         }

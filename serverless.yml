@@ -5,9 +5,11 @@ provider:
   region: us-east-1
   runtime: provided.al2
   deploymentBucket: peidigitalub
+  environment:
+    BREF_BINARY_RESPONSES: '1'
   apiGateway:
     binaryMediaTypes:
-      - '*/*'
+      - "*/*"
   iam:
     role:
       statements:
@@ -26,14 +28,15 @@ plugins:
 
 package:
   patterns:
-    - '!node_modules/**'
-    - '!public/storage'
-    - '!resources/assets/**'
-    - '!storage/**'
-    - '!tests/**'
-    - '!docker/**'
-    - '!.env'
-    - '!.env.example'
+    - "!node_modules/**"
+    - "!public/storage"
+    - "!resources/assets/**"
+    - "!resources/css/**"
+    - "!resources/js/**"
+    - "!storage/**"
+    - "!tests/**"
+    - "!docker/**"
+    - "!.env.example"
 
 functions:
   website:
