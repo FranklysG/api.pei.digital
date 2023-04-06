@@ -20,6 +20,8 @@ return new class extends Migration
             $table->foreignId('specialist_id')->constrained();
             $table->string('uuid')->unique();
             $table->string('title')->nullable();
+            $table->string('school')->nullable();
+            // section one
             $table->string('name')->nullable();
             $table->string('year')->nullable();
             $table->string('class')->nullable();
@@ -27,8 +29,29 @@ return new class extends Migration
             $table->string('birthdate')->nullable();
             $table->string('father')->nullable();
             $table->string('mother')->nullable();
+            // section two
             $table->string('diagnostic')->nullable();
+            // section four
             $table->text('description')->nullable();
+            // section five
+            $table->text('specialist_bool')->nullable();
+            // section six
+            $table->text('family_description')->nullable();
+            // section eight
+            $table->text('objective')->nullable();
+            // section ten
+            $table->text('proposal')->nullable();
+            // section eleven
+            $table->text('objective_adaptive')->nullable();
+            $table->text('action_adaptive')->nullable();
+            // section twelve
+            $table->text('resources_tech')->nullable();
+            // section thirteen
+            $table->text('resources_avaliation')->nullable();
+            // section fourteen
+            $table->text('object')->nullable();
+            // section fifteen
+            $table->text('conclusion')->nullable();
             $table->string('type')->default('processing');
             $table->string('status')->default('Processando');
             $table->string('date')->default(date('M d, Y'));
