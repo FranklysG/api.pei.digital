@@ -33,7 +33,7 @@ class SkillRepository extends BaseRepository
         $skills = $this->getAll();
 
         foreach ($skills as $value) {
-            $orderSkill[$value['type']][] = [
+            $orderSkill[$value['slug']][] = [
                 'uuid' => $value['uuid'],
                 'title' => $value['title']
             ];

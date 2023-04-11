@@ -72,7 +72,10 @@ class SkillSeeder extends Seeder
             ['type' => 'Habilidades Motoras/Psicomotoras', 'title' => 'Ser capaz de usar borracha/tesoura – Presença\nde estereotipias'],
             ['type' => 'Habilidades Motoras/Psicomotoras', 'title' => 'Possuir agitação psicomotora'],
             ['type' => 'Habilidades Motoras/Psicomotoras', 'title' => 'Possuir adequação postural – Desenvolvimento\nMotor'],
-            ['type' => 'Habilidades Motoras/Psicomotoras', 'title' => 'Possuir coordenação Motora – Equilíbrio']
+            ['type' => 'Habilidades Motoras/Psicomotoras', 'title' => 'Possuir coordenação Motora – Equilíbrio'],
+            ['type' => 'Habilidades do Cotidiano', 'title' => 'Alimentar-se – leva alimento com a mão à boca, usa a colher, come sólidos, derrama alimentos, bebe em mamadeira/copo/engasga, tem disfagia, reflexo de mordida.'],
+            ['type' => 'Habilidades do Cotidiano', 'title' => 'Possuir controle esfincteriano – Demonstra Necessidade de ir ao banheiro, vai ao banheiro sozinho, demonstra desconforto com relação às  necessidades fisiológicas, usa fralda.'],
+            ['type' => 'Habilidades do Cotidiano', 'title' => 'Possuir manejo do Vestuário – Veste e despe Roupas, utiliza os complementos do vestuário (botões, zíper, laço), calça, descalça tênis,  Sandália. '],
         ];
 
         foreach ($skills as $skill) {
