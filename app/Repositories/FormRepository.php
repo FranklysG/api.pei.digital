@@ -72,12 +72,15 @@ class FormRepository extends BaseRepository
         }
 
         if (!empty($data['goals'])) {
-            $goals = $data['goals'];
-
-            foreach ($goals as $value) {
-                Goals::create(array_merge($value, [
-                    'form_id' => $model->id
-                ]));
+            foreach ($data['goals'] as $key => $value) {
+                foreach ($value as $keys => $values) {
+                    foreach ($values as $obj) {
+                        Goals::create(array_merge($obj, [
+                            'type' => $keys,
+                            'form_id' => $model->id
+                        ]));
+                    }
+                }
             }
         }
 
@@ -91,6 +94,14 @@ class FormRepository extends BaseRepository
         } catch (ModelNotFoundException $exception) {
             return false;
         }
+
+        $specialist = Specialist::where('uuid', $data['specialist_uuid'])->first();
+
+        $data = array_merge($data, [
+            'specialist_id' => $specialist->id
+        ]);
+
+        $model->update($data);
 
         if (!empty($data['skills'])) {
 
@@ -111,9 +122,8 @@ class FormRepository extends BaseRepository
 
         if (!empty($data['specialtys'])) {
             Specialty::where('form_id', $model->id)->delete();
-            $specialtys = array_shift($data['specialtys']);
 
-            foreach ($specialtys as $value) {
+            foreach ($data['specialtys'] as $value) {
                 Specialty::create(array_merge($value, [
                     'form_id' => $model->id
                 ]));
@@ -123,16 +133,16 @@ class FormRepository extends BaseRepository
 
         if (!empty($data['goals'])) {
             Goals::where('form_id', $model->id)->delete();
-            $goals = array_shift($data['goals']);
-
-            foreach ($goals as $value) {
-                Goals::create(array_merge($value, [
-                    'form_id' => $model->id
-                ]));
+            foreach ($data['goals'] as $key => $values) {
+                foreach ($values as $value) {
+                    Goals::create(array_merge($value, [
+                        'type' => $key,
+                        'form_id' => $model->id
+                    ]));
+                }
             }
         }
 
-        $model->update($data);
         return $model->fresh();
     }
 

@@ -2,7 +2,6 @@
 
 namespace Database\Seeders;
 
-use App\Models\Specialty;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
@@ -21,6 +20,8 @@ class DatabaseSeeder extends Seeder
         $this->call(SettingSeeder::class);
         $this->call(SpecialistSeeder::class);
         $this->call(FormSeeder::class);
+        $this->call(GoalSeeder::class);
+        $this->call(SpecialtySeeder::class);
         $this->call(SkillSeeder::class);
         $this->call(FormSkillSeeder::class);
     }

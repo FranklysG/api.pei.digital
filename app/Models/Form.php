@@ -114,7 +114,7 @@ class Form extends Model
         $goals = $this->goals()->get();
         $order = [];
         foreach ($goals as $value) {
-            $order[$value['type']][] = $value;
+            $order[$value['slug']][] = $value;
         }
         return $order;
     }

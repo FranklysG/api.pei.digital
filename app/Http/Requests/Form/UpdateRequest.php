@@ -25,9 +25,42 @@ class UpdateRequest extends FormRequest
     {
         return [
             'uuid' => 'string|required',
-            'name' => 'string',
-            'status' => 'string',
-            'type' => 'string'
+            'title' => 'string|required',
+            'name' => 'string|required',
+            'year' => 'string|required',
+            'class' => 'string|required',
+            'bout' => 'string|required',
+            'birthdate' => 'string|required',
+            'father' => 'string|required',
+            'mother' => 'string|required',
+            'diagnostic' => 'string|required',
+            'description' => 'string|required',
+            'specialist_uuid' => 'string|required',
+            'skills' => [
+                [
+                    'uuid' => 'string',
+                    'helper' => 'string'
+                ]
+            ],
+            'specialtys' => [
+                [
+                    'name' => 'string',
+                    'location' => 'string',
+                    'professional' => 'string',
+                    'day' => 'string',
+                    'hour' => 'string',
+                    'contact' => 'string'
+                ]
+            ],
+            'goals' => [
+                'matematica' => [
+                    'goal' => 'string',
+                    'period' => 'string',
+                    'perfomance' => 'string',
+                    'strategy' => 'string',
+                    'resource' => 'string'
+                ]
+            ]
         ];
     }
 }
