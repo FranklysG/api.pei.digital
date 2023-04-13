@@ -40,7 +40,13 @@ return new class extends Migration
             // section eight
             $table->text('objective')->nullable();
             // section ten
-            $table->text('proposal')->nullable();
+            $table->boolean('proposal_one')->default(false);
+            $table->boolean('proposal_two')->default(false);
+            $table->boolean('proposal_three')->default(false);
+            $table->boolean('proposal_four')->default(false);
+            $table->boolean('proposal_six')->default(false);
+            $table->boolean('proposal_seven')->default(false);
+            $table->boolean('proposal_eigth')->default(false);
             // section eleven
             $table->text('objective_adaptive')->nullable();
             $table->text('action_adaptive')->nullable();
