@@ -25,9 +25,9 @@ class SkillTest extends TestCase
         $response->assertStatus(200);
         $this->assertNotNull($skills);
         $this->assertEquals(4, count($skills));
-        $this->assertEquals(13, count($skills['data']['Habilidades Cognitivas']));
-        $this->assertEquals(7, count($skills['data']['Habilidades Metacognitivas']));
-        $this->assertEquals(10, count($skills['data']['Habilidades comunicacionais']));
-        $this->assertEquals(16, count($skills['data']['Habilidades Motoras/Psicomotoras']));
+        $this->assertEquals(13, count($skills['data']['habilidades-cognitivas']));
+        $this->assertEquals(7, count($skills['data']['habilidades-metacognitivas']));
+        $this->assertEquals(10, count($skills['data']['habilidades-comunicacionais']));
+        $this->assertEquals(11, count($skills['data']['habilidades-socioemocionais']));
     }
 }
